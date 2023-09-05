@@ -35,10 +35,9 @@ public class BoardController {
 		list.add(b4);
 		list.add(b5);
 		
-		// 객체바인딩 - 동적바인딩
 		model.addAttribute("list", list);
 		
-		return "boardList"; // /WEB-INF/view/boardList.jsp -> forwawrd
+		return "boardList";
 	}
 	
 	
