@@ -15,10 +15,3 @@ public interface BoardMapper {
 	public List<Board> getLists(); // 게시글 전체보기기능
 	
 }
-
-
-
-
-
-
-

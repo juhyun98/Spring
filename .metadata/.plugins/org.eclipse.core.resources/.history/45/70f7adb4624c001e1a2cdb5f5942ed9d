@@ -1,6 +1,5 @@
 package kr.spring.mapper;
 
-import java.sql.DriverManager;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -12,13 +11,6 @@ import kr.spring.entity.Board;
 public interface BoardMapper {
 	
 	@Select("SELECT * FROM BOARD")
-	public List<Board> getLists(); // 게시글 전체보기기능
+	public List<Board> getLists();
 	
 }
-
-
-
-
-
-
-

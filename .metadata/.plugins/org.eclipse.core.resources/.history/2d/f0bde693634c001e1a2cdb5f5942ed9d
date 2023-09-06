@@ -16,7 +16,11 @@ public interface BoardMapper {
 	
 }
 
-
+public class SqlSessionFactoryBean implements BoardMapper{
+	
+	
+	
+}
 
 
 

@@ -12,13 +12,9 @@ import kr.spring.entity.Board;
 public interface BoardMapper {
 	
 	@Select("SELECT * FROM BOARD")
-	public List<Board> getLists(); // 게시글 전체보기기능
+	public List<Board> getLists();
+		// 게시글 전체보기 기능
+		
+	
 	
 }
-
-
-
-
-
-
-
