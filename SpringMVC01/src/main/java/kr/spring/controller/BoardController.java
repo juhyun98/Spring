@@ -16,13 +16,15 @@ public class BoardController {
 	
 	@Autowired
 	private BoardMapper mapper; // MyBatis한테 JDBC 실행하게 요청하는 객체
+		
 	
-	
-	
-	/*
-	 * @RequestMapping("/") // 요청 url로 들어왔을때 아래 기능을 수행하겠다 public String home() {
-	 * System.out.println("홈 기능 수행"); return "boardList"; }
-	 */
+	@RequestMapping("/") // 요청 url로 들어왔을때 아래 기능을 수행하겠다 
+	public String home() {
+		System.out.println("홈 기능 수행");
+		
+		return "redirect:/boardList.do"; 
+	}
+	 
 	
 	@RequestMapping("/boardList.do") // 요청 url로 들어왔을때 아래 기능을 수행하겠다
 	public String boardList(Model model) {
@@ -37,6 +39,21 @@ public class BoardController {
 		model.addAttribute("list", list);
 		
 		return "boardList"; // /WEB-INF/view/boardList.jsp -> forwawrd
+	}
+	
+	@RequestMapping("/boardForm.do")
+	public String boardForm() {
+		System.out.println("글쓰기페이지 이동");
+		return "boardForm";
+	}
+	
+	@RequestMapping("/boardInsert.do")
+	public String boardInsert(Board board) {
+		System.out.println("게시글 등록 기능수행");
+		
+		mapper.boardInsert(board);
+		
+		return "redirect:/boardList.do";
 	}
 	
 	
