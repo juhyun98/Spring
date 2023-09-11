@@ -60,6 +60,9 @@ public class BoardController {
 	@RequestMapping("/boardContent.do")
 	public String boardContent(@RequestParam("idx") int idx, Model model) {
 		System.out.println("게시글 상세보기 기능수행");
+		// 게시글 조회수 증가
+		mapper.boardCount(idx);
+		
 		Board vo = mapper.boardContent(idx);
 		model.addAttribute("vo", vo);
 		return "boardContent";
@@ -73,6 +76,20 @@ public class BoardController {
 		return "redirect:/boardList.do";
 	}
 	
+	@RequestMapping("/boardUpdateForm.do")
+	public String boardUpdateForm(@RequestParam("idx") int idx, Model model) {
+		System.out.println("게시글 수정화면 이동 기능수행");
+		Board vo = mapper.boardContent(idx);
+		model.addAttribute("vo", vo);
+		return "boardUpdateForm";
+	}
+	
+	@RequestMapping("/boardUpdate.do")
+	public String boardUpdate(Board vo) {
+		
+		mapper.boardUpdate(vo);
+		return "redirect:/boardList.do";
+	}
 	
 	
 }

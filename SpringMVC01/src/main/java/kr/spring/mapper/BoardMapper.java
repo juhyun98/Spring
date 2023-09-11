@@ -20,6 +20,10 @@ public interface BoardMapper {
 	
 	public void boardDelete(int idx);
 	
+	public void boardUpdate(Board vo);
+
+	public void boardCount(int idx);
+
 }
 
 
