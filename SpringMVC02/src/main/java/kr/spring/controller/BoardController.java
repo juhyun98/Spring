@@ -32,5 +32,10 @@ public class BoardController {
 		return list;
 	}
 	
-
+	@RequestMapping("/boardInsert.do")
+	public @ResponseBody void boardInsert(Board board) {
+		mapper.boardInsert(board);
+	}
+	
+	
 }
