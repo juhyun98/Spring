@@ -37,5 +37,10 @@ public class BoardController {
 		mapper.boardInsert(board);
 	}
 	
+	@RequestMapping("/boardDelete.do")
+	public @ResponseBody void boardDelete(@RequestParam("int") int idx) {
+		System.out.println("게시글 삭제 기능 수행");
+		mapper.boardDelete(idx);
+	}
 	
 }

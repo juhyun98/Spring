@@ -168,7 +168,7 @@
     		  url : "boardDelete.do",
     		  type : "get",
     		  data : {"idx" : idx},
-    		  success : ,
+    		  success : loadList,
     		  error : function() { alert("error"); }
     		  
     	  });
