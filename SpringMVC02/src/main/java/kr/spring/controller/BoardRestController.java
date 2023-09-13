@@ -3,7 +3,9 @@ package kr.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,8 +46,15 @@ public class BoardRestController {
 		mapper.boardInsert(board);
 	}
 	
-	@RequestMapping("/boardDelete.do")
-	public void boardDelete(@RequestParam("idx") int idx) {
+	@GetMapping("/{idx}")
+	public Board boardContent(@PathVariable("idx") int idx) {
+		Board vo = mapper.boardContent(idx);
+		return vo;
+	}
+	
+	
+	@DeleteMapping("{idx}")
+	public void boardDelete(@PathVariable("idx") int idx) {
 		System.out.println("게시글 삭제 기능 수행");
 		mapper.boardDelete(idx);
 	}

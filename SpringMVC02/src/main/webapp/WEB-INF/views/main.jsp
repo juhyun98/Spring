@@ -113,7 +113,7 @@
             listHtml += "<td>내용</td>";
             listHtml += "<td colspan='4'>";
             listHtml += "<textarea id='ta" + obj.idx + "' readonly rows='7' class='form-control'>";
-            listHtml += obj.content;
+            // listHtml += obj.content;
             listHtml += "</textarea>";
             
             
@@ -162,7 +162,20 @@
       function goContent(idx){
          
          if($("#c" + idx).css("display") == "none"){
+            
+            $.ajax({
+            	url : "board/" + idx
+            	type : "get",
+            	dataType : "json",
+            	success : function() {
+            		$("#ta" + idx).val(data, cotent);
+            	},
+            	error : function() { alert("error"); }
+            });
+            
             $("#c" + idx).css("display","table-row");
+            
+            
          }else{
             $("#c" + idx).css("display","none");
             
@@ -181,7 +194,7 @@
       
       function goDelete(idx){
          $.ajax({
-            url : "boardDelete.do",
+            url : "board/" + idx,
             type : "get",
             data : {"idx" : idx},
             success : loadList,
