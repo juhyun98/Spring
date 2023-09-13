@@ -186,6 +186,7 @@ JDK 버전 바꿔주기
 
 Github 연동하기
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/0730585a-de76-4fc0-8253-b39087fa9cfc)
 
 
 기트허브 사이트 로그인
@@ -204,15 +205,18 @@ Github 연동하기
 
 만들어진 서버의 주소를 복사한다
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/cd3ca014-b7ed-4ea1-9ff3-95ec5445447c)
 
 
 
 이클립스의 퍼스펙티브를 git으로 번경
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/e0e38358-959b-428d-be08-ad36454c2f7a)
 
 
 
 클론을 눌러 깃 레파지토리 안에 있는걸 복제한다
+![image](https://github.com/juhyun98/Spring/assets/140494238/3142dc7c-521e-4e5e-ba4b-41a0054f1d1e)
 
 
 복사한 주소를 넣고 계정과 비밀번호를 입력한다 그 다음 Next -> finish
@@ -222,50 +226,62 @@ Github 연동하기
 그럼 우리 웹 프로젝트를 git에 올려야함
 
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/ff413f84-41d0-47b6-9c1d-71709bf2848e)
 
 
 
 프로젝트 마우스 오른쪽 클릭 -> Team -> share Project 선택
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/a0fc1ecc-4103-4c47-b981-9482e3ff426f)
 
 
 
 Git를 선택한다음
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/a2dee75b-2f19-475d-be5a-7edbea87319e)
 
 
 그다음 레파지토리 클릭 후 아까 만든 위치를 잡아준다
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/43a55a92-b64e-4287-9e19-8d65d916a943)
 
 
 인덱스 표기도 추가해준다
 
 이제 우리가 만든 기트허브 서버에 프로젝트를 올릴 것이다
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/ebc85f71-d27b-4dab-b465-d8a9099fee99)
 
 
 커밋을 하면 우리 프로젝트를 서버에 올린다는 것이다
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/b797c91c-ca3f-48cc-82ae-00b8f8708d32)
 
 
 내용을 입력하고
 
 커밋 푸쉬를 누른다
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/5741f68b-a0d5-4fef-98ec-8dbb5a547ea9)
 
 
 
 계정과 비밀번호를 입력하라고 하는 데 비밀번호는 계정 비밀번호가 아니라 기트 비밀번호이다
 
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/bc4b6b7d-a7b3-44e0-9a33-312ef00a6d66)
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/393b458d-840f-4b13-899d-4c1991ec0345)
 
 
 세팅으로 들어와서 토큰을 만들어준다
 
+![image](https://github.com/juhyun98/Spring/assets/140494238/a581b969-8fb6-4740-a7ac-052738718330)
 
 
 그럼 푸쉬를 눌러준다
+
+![image](https://github.com/juhyun98/Spring/assets/140494238/4eab3a62-b9cd-46b1-a25d-d36586c543b0)
 
 
 
