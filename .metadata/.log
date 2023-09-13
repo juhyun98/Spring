@@ -3822,3 +3822,9 @@ java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2023-09-13 12:16:52.920
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-09-13 12:17:43.977
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-09-13 12:17:43.979
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!

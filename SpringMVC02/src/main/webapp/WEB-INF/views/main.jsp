@@ -84,7 +84,7 @@
          // 비동기방식으로 게시글 리스트 가져오기 기능
          // ajax - 요청 url, 어떻게 데이터 받을지, 요청방식 등... -> 객체
          $.ajax({
-            url : "boardList.do",
+            url : "board/all",
             type : "get",
             dataType : "json",
             success : makeView, // 콜백함수
