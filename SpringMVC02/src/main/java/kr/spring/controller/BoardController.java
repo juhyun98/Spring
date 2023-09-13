@@ -3,9 +3,11 @@ package kr.spring.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,6 +43,16 @@ public class BoardController {
 	public @ResponseBody void boardDelete(@RequestParam("idx") int idx) {
 		System.out.println("게시글 삭제 기능 수행");
 		mapper.boardDelete(idx);
+	}
+	
+	@RequestMapping("/boardUpdate.do")
+	public @ResponseBody void boardUpdate(Board vo) {
+		mapper.boardUpdate(vo);
+	}
+	
+	@RequestMapping("/boardCount.do")
+	public @ResponseBody void boardCount(@RequestParam("idx") int idx) {
+		mapper.boardCount(idx);
 	}
 	
 }

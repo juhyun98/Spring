@@ -139,7 +139,7 @@
       }
       
       function goList(){
-         $("#boardList").css("display", "block");
+         $("#boardList").css("display", "table-row");
          $("#wform").css("display", "none");
       }
       
@@ -165,6 +165,17 @@
             $("#c" + idx).css("display","table-row");
          }else{
             $("#c" + idx).css("display","none");
+            
+            // boardCount.do 요청해서 조회수를 1올리고
+            // 게시글을 다시 불러와 적용시키시오
+            $.ajax({
+            	url : "boardCount.do",
+            	type : "get",
+            	data : {"idx" : idx},
+            	success : loadList,
+            	error : function() { alert("error"); }
+            });
+            
          }
       }
       
@@ -200,16 +211,20 @@
          var content = $("#ta" + idx).val();
          var writer = $("#nw" + idx).val();
          
-         console.log(title + "/" + content + "/" + writer);
-         // boardUpdate.do로 요청을 통해 게시글을 수정하고
-         // 수정된 게시글 다시 불러와서 적용시키시오 (숙제)
+         $.ajax({
+        	 url : "boardUpdate.do",
+        	 type : "post", 
+        	 data : {"idx" : idx, "title" : title, "content" : content, "writer" : writer},
+        	 success : loadList,
+        	 error : function() { alert("error"); }
+         });
          
       }
       
       
       
       
-   
+      
    </script>
 
 </body>
