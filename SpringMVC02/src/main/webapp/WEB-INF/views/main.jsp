@@ -164,10 +164,10 @@
          if($("#c" + idx).css("display") == "none"){
             
             $.ajax({
-            	url : "board/" + idx
+            	url : "board/" + idx,
             	type : "get",
             	dataType : "json",
-            	success : function() {
+            	success : function(data) {
             		$("#ta" + idx).val(data, cotent);
             	},
             	error : function() { alert("error"); }
@@ -195,7 +195,7 @@
       function goDelete(idx){
          $.ajax({
             url : "board/" + idx,
-            type : "get",
+            type : "delete",
             data : {"idx" : idx},
             success : loadList,
             error : function() { alert("error"); }      
