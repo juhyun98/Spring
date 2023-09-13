@@ -3,6 +3,7 @@ package kr.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,7 +31,7 @@ public class BoardRestController {
 	private BoardMapper mapper; // MyBatis한테 JDBC 실행하게 요청하는 객체
 
 	
-	@RequestMapping("/all")
+	@GetMapping("/all")
 	public List<Board> boardList() {
 		List<Board> list = mapper.getLists();
 		return list;
@@ -51,7 +52,7 @@ public class BoardRestController {
 	public void boardUpdate(Board vo) {
 		mapper.boardUpdate(vo);
 	}
-	 
+	
 	@RequestMapping("/boardCount.do")
 	public void boardCount(@RequestParam("idx") int idx) {
 		mapper.boardCount(idx);
