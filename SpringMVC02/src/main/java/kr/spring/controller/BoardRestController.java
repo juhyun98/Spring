@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,8 +38,9 @@ public class BoardRestController {
 		return list;
 	}
 	
-	@RequestMapping("/boardInsert.do")
+	@PostMapping("/new")
 	public void boardInsert(Board board) {
+		System.out.println("게시글 작성 기능수행");
 		mapper.boardInsert(board);
 	}
 	

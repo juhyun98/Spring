@@ -149,7 +149,7 @@
          var fData = $("#frm").serialize();
          
          $.ajax({
-            url : "boardInsert.do",
+            url : "board/new",
             type : "post",
             data : fData,
             success : loadList,
