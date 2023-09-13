@@ -51,7 +51,7 @@ public class BoardRestController {
 	public void boardUpdate(Board vo) {
 		mapper.boardUpdate(vo);
 	}
-	
+	 
 	@RequestMapping("/boardCount.do")
 	public void boardCount(@RequestParam("idx") int idx) {
 		mapper.boardCount(idx);
