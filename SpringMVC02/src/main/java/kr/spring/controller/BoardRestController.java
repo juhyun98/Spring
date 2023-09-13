@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.spring.entity.Board;
 import kr.spring.mapper.BoardMapper;
 
+// 앞으로 게시글 관련 요청할때는 무조건
+// /board/하고싶은 기능요청 url
+// /board/boardList.do
+// /board/boardDelete.do
+
+@RequestMapping("/board")
 @RestController
 public class BoardRestController {
 	
