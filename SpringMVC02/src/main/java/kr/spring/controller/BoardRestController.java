@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -53,19 +55,19 @@ public class BoardRestController {
 	}
 	
 	
-	@DeleteMapping("{idx}")
+	@DeleteMapping("/{idx}")
 	public void boardDelete(@PathVariable("idx") int idx) {
 		System.out.println("게시글 삭제 기능 수행");
 		mapper.boardDelete(idx);
 	}
 	
-	@RequestMapping("/boardUpdate.do")
-	public void boardUpdate(Board vo) {
+	@PutMapping("/update")
+	public void boardUpdate(@RequestBody Board vo) {
 		mapper.boardUpdate(vo);
 	}
 	
-	@RequestMapping("/boardCount.do")
-	public void boardCount(@RequestParam("idx") int idx) {
+	@PutMapping("/count/{idx}")
+	public void boardCount(@PathVariable("idx") int idx) {
 		mapper.boardCount(idx);
 	}
 	

@@ -168,7 +168,7 @@
             	type : "get",
             	dataType : "json",
             	success : function(data) {
-            		$("#ta" + idx).val(data, cotent);
+            		$("#ta" + idx).val(data.content);
             	},
             	error : function() { alert("error"); }
             });
@@ -182,9 +182,8 @@
             // boardCount.do 요청해서 조회수를 1올리고
             // 게시글을 다시 불러와 적용시키시오
             $.ajax({
-            	url : "boardCount.do",
-            	type : "get",
-            	data : {"idx" : idx},
+            	url : "board/count/" + idx,
+            	type : "put",
             	success : loadList,
             	error : function() { alert("error"); }
             });
@@ -225,9 +224,10 @@
          var writer = $("#nw" + idx).val();
          
          $.ajax({
-        	 url : "boardUpdate.do",
-        	 type : "post", 
-        	 data : {"idx" : idx, "title" : title, "content" : content, "writer" : writer},
+        	 url : "board/update",
+        	 type : "put",
+        	 contentType : "application/json;charset=utf-8",
+        	 data : JSON.stringify({"idx" : idx, "title" : title, "content" : content, "writer" : writer}),
         	 success : loadList,
         	 error : function() { alert("error"); }
          });
