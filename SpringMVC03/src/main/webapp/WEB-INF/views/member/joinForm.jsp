@@ -23,6 +23,9 @@
        <div class="panel-body">
 
       <form action="">
+      
+      	 <input type="hidden" name="memPassword" id="memPassword" value="">
+      	
          <table style="text-align: center; border : 1px solid #dddddd" class="table table-bordered">
             <tr>
                <td style="width: 110px; vertical-align: middle;">아이디</td>
@@ -73,6 +76,7 @@
             
             <tr>
                <td colspan="3">
+                  <span id="passMessage" style="color:red;"></span>
                   <input type="submit" class="btn btn-primary btn-sm pull-right" value="등록">
                   <input type="reset" class="btn btn-warning btn-sm pull-right" value="취소">
                </td>
@@ -88,38 +92,78 @@
        <div class="panel-footer">스프링게시판 - 박병관</div>
      </div>
    </div>
-   
-   <script type="text/javascript">
-   
-      function registerCheck(){
-         
-         var memID = $("#memID").val();
-         
-         $.ajax({
-        	url : "${contextPath}/registerCheck.do",
-        	type : "get",
-        	data : {"memID" : memID},
-        	success : function(data) {
-        		// 중복유무 확인 -> (data = 1 사용가능 data = 0 사용불가능)
-        		alert(data)
-        	},
-        	error : function() { alert("error"); }
-         });
-         
-         
-         
-      }   
-      
-      function passwordCheck(){
-         
-      }
-      
-      
-      
-      
-      
-   
-   </script>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div id="checkType" class="modal-content">
+				<div class="modal-header panel-heading">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">메세지 확인</h4>
+				</div>
+				<div class="modal-body">
+					<p id="checkMessage"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		function registerCheck() {
+
+			var memID = $("#memID").val();
+
+			$.ajax({
+				url : "${contextPath}/registerCheck.do",
+				type : "get",
+				data : {
+					"memID" : memID
+				},
+				success : function(data) {
+					// 중복유무 확인 -> (data = 1 사용가능 data = 0 사용불가능)
+
+					if (data == 1) {
+						$("#checkMessage").text("사용할 수 있는 아이디 입니다.");
+						$("#checkType").attr("class", "modal-content panel-success");
+					} else {
+						$("#checkMessage").text("사용할 수 없는 아이디 입니다.");
+						$("#checkType").attr("class", "modal-content panel-warning");
+					}
+					
+					$("#myModal").modal("show");
+					
+				},
+				error : function() {
+					alert("error");
+				}
+			});
+
+		}
+
+		function passwordCheck() {
+			
+			var memPassword1 = $("#memPassword1").val();
+			var memPassword2 = $("#memPassword2").val();
+			
+			if(memPassword1 != memPassword2) {
+				$("#passMessage").html("비밀번호가 서로 일치하지 않습니다.");
+			}else {
+				$("#memPassword").val(memPassword1);
+				$("#passMessage").html("");
+			}
+			
+		}
+		
+		
+		
+	</script>
    
 </body>
 </html>
