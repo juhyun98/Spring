@@ -1,5 +1,7 @@
 package kr.spring.controller;
 
+import java.io.Reader;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,6 +96,31 @@ public class MemberController {
 		
 		return "member/loginForm";
 	}
+	
+	@RequestMapping("/login.do")
+	public String login(Member m, HttpSession session, RedirectAttributes rttr) {
+		
+		// 문제.
+		// mapper에 login이라는 메소드 이름으로 로그인 기능을 수행하시오
+		// 로그인 성공 시 -> index.jsp 이동 후 로그인에 성공했습니다 modal창 띄우기
+		// 로그인 실패 시 -> login.jsp 이동 후 로그인에 실패했습니다 modal창 띄우기
+		
+		Member mvo = mapper.login(m);
+		
+		if (mvo != null) {
+			rttr.addFlashAttribute("msgType", "성공메세지");
+			rttr.addFlashAttribute("msg", "로그인에 성공했습니다.");
+			session.setAttribute("mvo", mvo);
+			return "redirect:/";
+		} else {
+			rttr.addFlashAttribute("msgType", "실패메세지");
+			rttr.addFlashAttribute("msg", "로그인에 실패했습니다.");
+			return "redirect:/loginForm.do";
+		}
+		
+		
+	}
+	
 	
 	
 	
