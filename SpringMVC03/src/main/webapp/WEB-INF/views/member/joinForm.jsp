@@ -35,7 +35,7 @@
             
             <tr>
                <td style="width: 110px; vertical-align: middle;">비밀번호</td>
-               <td colspan="2"><input type="password" onkeyup="passwordCheck()"  name="memPassword1" id="memPassword1" class="form-control" maxlength="20" placeholder="비밀번호를 입력하세요."></td>
+               <td colspan="2"><input required="required" type="password" onkeyup="passwordCheck()"  name="memPassword1" id="memPassword1" class="form-control" maxlength="20" placeholder="비밀번호를 입력하세요."></td>
             </tr>
             
             <tr>
@@ -96,7 +96,6 @@
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" role="dialog">
 		<div class="modal-dialog">
-
 			<!-- Modal content-->
 			<div id="checkType" class="modal-content">
 				<div class="modal-header panel-heading">
@@ -110,7 +109,6 @@
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
-
 		</div>
 	</div>
 

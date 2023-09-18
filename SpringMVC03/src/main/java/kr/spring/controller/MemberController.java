@@ -1,5 +1,7 @@
 package kr.spring.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +39,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/join.do")
-	public String join(Member m, RedirectAttributes rttr) {
+	public String join(Member m, RedirectAttributes rttr, HttpSession session) {
 		System.out.println("회원가입 기능요청");
 		
 		// 유효성 검사
@@ -65,14 +67,23 @@ public class MemberController {
 			
 			if( cnt == 1) {
 				System.out.println("회원가입 성공!");
+				rttr.addFlashAttribute("msgType", "성공메세지");
+				rttr.addFlashAttribute("msg", "회원가입에 성공했습니다.");
+				// 회원가입 성공 시 로그인 처리까지 시키기
+				session.setAttribute("mvo", m);
+				return "redirect:/";
 			}else {
 				System.out.println("회원가입 실패...");
+				rttr.addFlashAttribute("msgType", "실패메세지");
+				rttr.addFlashAttribute("msg", "회원가입에 실패했습니다.");
+				return "redirect:/joinForm.do";
 			}
-			// 회원가입 후 index.jsp로 이동시키시오
-			return "index";
+			
 		}
+	
 	}
-		
+	
+	
 	
 	
 	
