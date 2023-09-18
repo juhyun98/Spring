@@ -45,3 +45,4 @@ VALUES('admin', '1234', '관리자', 20, '남자', 'admin@gmail.com', '');
 
 SELECT * FROM MEMBER;
 
+DELETE FROM MEMBER;

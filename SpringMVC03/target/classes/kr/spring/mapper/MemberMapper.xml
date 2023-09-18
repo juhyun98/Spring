@@ -6,6 +6,9 @@
 		SELECT * FROM MEMBER WHERE MEMID = #{memID}
 	</select>
 	
-	
+	<insert id="join" parameterType="kr.spring.entity.Member"> 
+		INSERT INTO MEMBER(memID, memPassword, memName, memAge, memGender, memEmail, memProfile)
+		VALUES(#{memID}, #{memPassword}, #{memName}, #{memAge}, #{memGender}, #{memEmail}, #{memProfile})
+	</insert>
 	
 </mapper>
