@@ -89,7 +89,11 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	
+	@RequestMapping("/loginForm.do")
+	public String loginForm() {
+		
+		return "member/loginForm";
+	}
 	
 	
 	
