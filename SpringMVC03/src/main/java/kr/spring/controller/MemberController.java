@@ -141,18 +141,14 @@ public class MemberController {
 				m.getMemAge() == 0 ||
 				m.getMemEmail() == null || m.getMemEmail().equals("")
 				) {
-				// 회원가입을 할 수 없다 하나라도 누락되어 있기 때문에
-				
-				// 실패시 joinForm.do로 msgType과 msg 내용을 보내야함
-				// msgType : 실패메세지, msg : 모든 내용을 입력하세요
-				// RedirectAttributes - 리다이렉트 방식으로 이동할때 보낼 데이터를 저장하는 객체
 				
 				rttr.addFlashAttribute("msgType", "실패메세지");
 				rttr.addFlashAttribute("msg", "모든 내용을 입력하세요.");
 				
 				return "redirect:/updateForm.do";
 		}else {
-			
+			// 조건3. 회원수정에 성공 했을때에는 index.jsp로 다시 돌려보내면서
+			//		 index.jsp에서는 "회원정보 수정에 성공했습니다" 라는 모달창을 띄우세요
 			if( cnt == 1) {
 				System.out.println("회원정보수정 성공!");
 				rttr.addFlashAttribute("msgType", "성공메세지");
@@ -160,16 +156,14 @@ public class MemberController {
 				session.setAttribute("mvo", m);
 				return "redirect:/";
 			}else {
+				// 조건2. 회원수정에 실패 했을때에는 updateForm.jsp로 다시 돌려보내면서
+				//		 updateForm.jsp에서는 "회원수정이 실패했습니다" 라는 모달창을 띄우세요
 				System.out.println("회원정보수정 실패...");
 				rttr.addFlashAttribute("msgType", "실패메세지");
 				rttr.addFlashAttribute("msg", "회원정보수정에 실패했습니다.");
 				return "redirect:/updateForm.do";
 		}
 			
-		// 조건2. 회원수정에 실패 했을때에는 updateForm.jsp로 다시 돌려보내면서
-		//		 updateForm.jsp에서는 "회원수정이 실패했습니다" 라는 모달창을 띄우세요
-		// 조건3. 회원수정에 성공 했을때에는 index.jsp로 다시 돌려보내면서
-		//		 index.jsp에서는 "회원정보 수정에 성공했습니다" 라는 모달창을 띄우세요
 		
 		
 		
