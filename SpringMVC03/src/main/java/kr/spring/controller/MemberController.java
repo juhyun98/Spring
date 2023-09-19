@@ -164,11 +164,8 @@ public class MemberController {
 				return "redirect:/updateForm.do";
 		}
 			
-		
-		
-		
-		
 	}
+
 }
 	
 	
