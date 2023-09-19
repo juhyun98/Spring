@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="type"/>
+		<item key="selection" value="table table-bordered"/>
 		<list key="findhistory">
+			<item value="table table-bordered"/>
 			<item value="Type"/>
 			<item value="#"/>
 			<item value="#&apos;"/>
