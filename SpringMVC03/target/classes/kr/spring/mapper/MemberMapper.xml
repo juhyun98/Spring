@@ -16,7 +16,9 @@
 	</select>
 	
 	<update id="update" parameterType="kr.spring.entity.Member">
-		UPDATE MEMBER SET memPassword = #{memPassword}, memName = #{memName}, memAge = #{memAge}, memGender = #{memGender}, memEmail = #{memEmail}
+		UPDATE MEMBER SET memPassword = #{memPassword},
+		memName = #{memName}, memAge = #{memAge}, memGender = #{memGender},
+		memEmail = #{memEmail}
 		WHERE MEMID = #{memID}
 		
 	</update>

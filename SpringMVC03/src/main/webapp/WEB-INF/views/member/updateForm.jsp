@@ -50,7 +50,7 @@
             
             <tr>
                <td style="width: 110px; vertical-align: middle;">나이</td>
-               <td colspan="2"><input type="number" id="memAge" name="memAge" class="form-control" value="${mvo.memAge}" maxlength="20" placeholder="나이를 입력하세요."></td>
+               <td colspan="2"><input required="required" type="number" id="memAge" name="memAge" class="form-control" value="${mvo.memAge}" maxlength="20" placeholder="나이를 입력하세요."></td>
             </tr>
             
             <tr>
