@@ -23,6 +23,12 @@ public interface MemberMapper {
 
 	public void profileUpdate(Member mvo);
 
+	public Member getMember(String memID);
+
+
+
+	
+
 	
 
 }

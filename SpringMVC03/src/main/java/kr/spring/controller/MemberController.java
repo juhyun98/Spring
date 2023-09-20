@@ -1,5 +1,6 @@
 package kr.spring.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 
@@ -192,6 +193,22 @@ public class MemberController {
 		// 이미지 최대크기
 		int fileMaxSize = 10 * 1024 * 1024 * 10;
 		
+		// 기존 해당 프로필 이미지 삭제
+		// - 로그인 한 사람의 프로필 값을 가져와야함
+		String memID = ((Member)session.getAttribute("mvo")).getMemID();
+		
+		// getMember 메소드는 memID와 일치하는 회원의 정보 (Member)를 가져온다
+		String oldImg = mapper.getMember(memID).getMemProfile();
+		System.out.println(oldImg);
+		
+		// 기존의 프로필 사진 삭제
+		File oldFile = new File(savePath+"/"+oldImg);
+		if(oldFile.exists()) {
+			oldFile.delete();
+		}
+		
+		
+		
 		try {
 			multi = new MultipartRequest(request, savePath, fileMaxSize, "UTF-8", new DefaultFileRenamePolicy());
 		} catch (IOException e) {
@@ -199,7 +216,7 @@ public class MemberController {
 			e.printStackTrace();
 		}
 		
-		String memID = ((Member)session.getAttribute("mvo")).getMemID();
+
 		
 		// 업로드한 파일의 이름을 가져오는 코드
 		String newProfile = multi.getFilesystemName("memProfile");
