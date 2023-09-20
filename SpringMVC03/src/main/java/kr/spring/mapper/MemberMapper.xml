@@ -20,6 +20,8 @@
 		memName = #{memName}, memAge = #{memAge}, memGender = #{memGender},
 		memEmail = #{memEmail}
 		WHERE MEMID = #{memID}
-		
+	</update>
+	<update id="profileUpdate">
+		UPDATE MEMBER SET MEMPROFILE = #{memProfile} WHERE MEMID = #{memID}
 	</update>
 </mapper>

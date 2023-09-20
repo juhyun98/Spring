@@ -135,7 +135,7 @@ public class MemberController {
 	public String update(Member m, RedirectAttributes rttr, HttpSession session) {
 		
 		m.setMemProfile("");
-		int cnt = mapper.update(m);
+		
 		// 문제.
 		// mapper의 update메소드를 통해 해당 회원의 정보를 수정하시오
 		
@@ -152,6 +152,7 @@ public class MemberController {
 				
 				return "redirect:/updateForm.do";
 		}else {
+			int cnt = mapper.update(m);
 			// 조건3. 회원수정에 성공 했을때에는 index.jsp로 다시 돌려보내면서
 			//		 index.jsp에서는 "회원정보 수정에 성공했습니다" 라는 모달창을 띄우세요
 			if( cnt == 1) {
@@ -203,11 +204,14 @@ public class MemberController {
 		// 업로드한 파일의 이름을 가져오는 코드
 		String newProfile = multi.getFilesystemName("memProfile");
 		
-		System.out.println(memID + "/" + newProfile);
+		Member mvo = new Member();
+		mvo.setMemID(memID);
+		mvo.setMemProfile(newProfile);
+		
+		mapper.profileUpdate(mvo);
 		
 		
-		
-		return null;
+		return "redirect:/";
 	}
 	
 	
