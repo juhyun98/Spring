@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -39,6 +39,22 @@
 				
 				<c:if test="${not empty mvo}">
 				<ul class="nav navbar-nav navbar-right">
+				
+					<li>
+						
+						<c:if test="${mvo.memProfile ne ''}">
+							<img class="img-circle" style="width: 50px; height: 50px;" src="${contextPath}/resources/upload/${mvo.memProfile}">
+							${mvo.memName}님 Welcome.						
+						</c:if>
+						
+						<c:if test="${mvo.memProfile eq ''}">
+							<img class="img-circle" style="width: 50px; height: 50px;" src="${contextPath}/resources/images/default.png">
+							${mvo.memName}님 Welcome.						
+						</c:if>
+						
+						
+					</li>
+					
 				  	<li><a href="${contextPath}/updateForm.do"><span class="glyphicon glyphicon-pencil">회원정보수정</span></a></li>
 					<li><a href="${contextPath}/imageForm.do"><span class="glyphicon glyphicon-upload"></span>프로필사진등록</a></li>
 					<li><a href="${contextPath}/logout.do"><span class="glyphicon glyphicon-log-out">로그아웃</span></a></li>

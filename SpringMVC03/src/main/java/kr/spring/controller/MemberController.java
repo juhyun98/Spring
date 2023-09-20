@@ -243,6 +243,10 @@ public class MemberController {
 		
 		mapper.profileUpdate(mvo);
 		
+		// 사진 업데이트 후 수정된 회원정보를 다시 가져와서 세션에 담기
+		Member m = mapper.getMember(memID);
+		session.setAttribute("mvo", mvo);
+		
 		rttr.addFlashAttribute("msgType", "성공메세지");
 		rttr.addFlashAttribute("msg", "이미지 변경에 성공했습니다.");
 		return "redirect:/";
