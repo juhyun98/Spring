@@ -181,7 +181,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/imageUpdate.do")
-	public String imageUpdate(HttpServletRequest request, HttpSession session) {
+	public String imageUpdate(HttpServletRequest request, HttpSession session, RedirectAttributes rttr) {
 		
 		// 파일 업로드를 할 수 있게 도와주는 객체 (cos.jar)
 		// 파일 업로드를 할 수 있게 도와주는 MultipartRequest 객체를 생성하기 위해서는
@@ -207,8 +207,6 @@ public class MemberController {
 			oldFile.delete();
 		}
 		
-		
-		
 		try {
 			multi = new MultipartRequest(request, savePath, fileMaxSize, "UTF-8", new DefaultFileRenamePolicy());
 		} catch (IOException e) {
@@ -216,7 +214,25 @@ public class MemberController {
 			e.printStackTrace();
 		}
 		
-
+		// 내가 업로드한 파일 가져오기
+		File file = multi.getFile("memProfile");
+		
+		if(file != null) { // 업로드가 된 상태
+			// System.out.println(file.getName());
+			String ext = file.getName().substring(file.getName().lastIndexOf(".") + 1);
+			ext = ext.toUpperCase();
+			System.out.println(ext);
+			if(!(ext.equals("PNG") || ext.equals("GIF") || ext.equals("JPG"))) {
+				
+				if(file.exists()) {
+					file.delete();
+					rttr.addFlashAttribute("msgType", "실패메세지");
+					rttr.addFlashAttribute("msg", "이미지 파일만 가능합니다.(PNG, JPG, GIF)");
+					return "redirect:/imageForm.do";
+					
+				}
+			}
+		}
 		
 		// 업로드한 파일의 이름을 가져오는 코드
 		String newProfile = multi.getFilesystemName("memProfile");
@@ -227,8 +243,10 @@ public class MemberController {
 		
 		mapper.profileUpdate(mvo);
 		
-		
+		rttr.addFlashAttribute("msgType", "성공메세지");
+		rttr.addFlashAttribute("msg", "이미지 변경에 성공했습니다.");
 		return "redirect:/";
+		
 	}
 	
 	
