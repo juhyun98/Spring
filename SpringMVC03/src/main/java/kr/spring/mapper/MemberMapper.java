@@ -1,11 +1,14 @@
 package kr.spring.mapper;
 
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+
+import com.mysql.jdbc.PreparedStatement;
 
 import kr.spring.entity.Board;
 import kr.spring.entity.Member;
@@ -25,13 +28,12 @@ public interface MemberMapper {
 
 	public Member getMember(String memID);
 
-
-
-	
-
-	
-
 }
+
+
+
+
+
 
 
 

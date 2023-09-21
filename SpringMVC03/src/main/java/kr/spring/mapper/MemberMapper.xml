@@ -3,28 +3,42 @@
 <mapper namespace="kr.spring.mapper.MemberMapper">
 
 	<select id="registerCheck" parameterType="String" resultType="kr.spring.entity.Member">
-		SELECT * FROM MEMBER WHERE MEMID = #{memID}
+		SELECT * FROM MEMBER WHERE MEMID = #{memID}	
 	</select>
 	
-	<insert id="join" parameterType="kr.spring.entity.Member"> 
-		INSERT INTO MEMBER(memID, memPassword, memName, memAge, memGender, memEmail, memProfile)
-		VALUES(#{memID}, #{memPassword}, #{memName}, #{memAge}, #{memGender}, #{memEmail}, #{memProfile})
+	<insert id="join" parameterType="kr.spring.entity.Member">
+		INSERT INTO MEMBER(MEMID, MEMPASSWORD, MEMNAME, MEMAGE, MEMGENDER,
+		MEMEMAIL, MEMPROFILE)
+		VALUES(#{memID}, #{memPassword}, #{memName}, #{memAge},
+		#{memGender}, #{memEmail}, #{memProfile})
 	</insert>
 	
-	<select id="login" parameterType="kr.spring.entity.Member" resultType="kr.spring.entity.Member">
-		SELECT * FROM MEMBER WHERE MEMID = #{memID} AND MEMPASSWORD = #{memPassword}
+	<select id="login" resultType="kr.spring.entity.Member" parameterType="kr.spring.entity.Member">
+		SELECT * FROM MEMBER 
+		WHERE MEMID = #{memID} AND MEMPASSWORD = #{memPassword}
 	</select>
-	
+
 	<update id="update" parameterType="kr.spring.entity.Member">
-		UPDATE MEMBER SET memPassword = #{memPassword},
-		memName = #{memName}, memAge = #{memAge}, memGender = #{memGender},
-		memEmail = #{memEmail}
+	    UPDATE MEMBER SET MEMPASSWORD = #{memPassword}, 
+	    MEMNAME = #{memName}, MEMAGE = #{memAge}, MEMGENDER = #{memGender},
+	    MEMEMAIL = #{memEmail}
+	    WHERE MEMID = #{memID}
+	</update>
+	
+	<update id="profileUpdate" parameterType="kr.spring.entity.Member">
+		UPDATE MEMBER SET MEMPROFILE = #{memProfile}
 		WHERE MEMID = #{memID}
 	</update>
-	<update id="profileUpdate" parameterType="kr.spring.entity.Member">
-		UPDATE MEMBER SET MEMPROFILE = #{memProfile} WHERE MEMID = #{memID}
-	</update>
+	
 	<select id="getMember" parameterType="String" resultType="kr.spring.entity.Member">
 		SELECT * FROM MEMBER WHERE MEMID = #{memID}
 	</select>
+	
+	
+	
+
+
 </mapper>
+
+
+

@@ -2,7 +2,6 @@ package kr.spring.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -25,9 +24,7 @@ public class MemberController {
 	
 	@Autowired
 	private MemberMapper mapper;
-	
-	
-	
+
 	@RequestMapping("/joinForm.do")
 	public String joinForm() {
 		return "member/joinForm";
@@ -35,12 +32,13 @@ public class MemberController {
 	
 	@RequestMapping("/registerCheck.do")
 	public @ResponseBody int registerCheck(@RequestParam("memID") String memID) {
+		
 		Member m = mapper.registerCheck(memID);
 		// m == null -> 아이디 사용가능
 		// m != null -> 아이디 사용 불가능
 		if( m != null || memID.equals("")) {
 			return 0;
-		}else {
+		}else{
 			return 1;
 		}
 		
@@ -51,7 +49,7 @@ public class MemberController {
 		System.out.println("회원가입 기능요청");
 		
 		// 유효성 검사
-		if (m.getMemID() == null || m.getMemID().equals("") ||
+		if(m.getMemID() == null || m.getMemID().equals("") ||
 			m.getMemPassword() == null || m.getMemPassword().equals("") ||
 			m.getMemName() == null || m.getMemName().equals("") ||
 			m.getMemAge() == 0 ||
@@ -73,7 +71,7 @@ public class MemberController {
 			m.setMemProfile("");
 			int cnt = mapper.join(m);
 			
-			if( cnt == 1) {
+			if(cnt == 1) {
 				System.out.println("회원가입 성공!");
 				rttr.addFlashAttribute("msgType", "성공메세지");
 				rttr.addFlashAttribute("msg", "회원가입에 성공했습니다.");
@@ -88,7 +86,7 @@ public class MemberController {
 			}
 			
 		}
-	
+		
 	}
 	
 	@RequestMapping("/logout.do")
@@ -99,31 +97,24 @@ public class MemberController {
 	
 	@RequestMapping("/loginForm.do")
 	public String loginForm() {
-		
 		return "member/loginForm";
 	}
 	
 	@RequestMapping("/login.do")
 	public String login(Member m, HttpSession session, RedirectAttributes rttr) {
 		
-		// 문제.
-		// mapper에 login이라는 메소드 이름으로 로그인 기능을 수행하시오
-		// 로그인 성공 시 -> index.jsp 이동 후 로그인에 성공했습니다 modal창 띄우기
-		// 로그인 실패 시 -> login.jsp 이동 후 로그인에 실패했습니다 modal창 띄우기
-		
 		Member mvo = mapper.login(m);
 		
-		if (mvo != null) {
+		if(mvo != null) {
 			rttr.addFlashAttribute("msgType", "성공메세지");
 			rttr.addFlashAttribute("msg", "로그인에 성공했습니다.");
 			session.setAttribute("mvo", mvo);
 			return "redirect:/";
-		} else {
+		}else {
 			rttr.addFlashAttribute("msgType", "실패메세지");
 			rttr.addFlashAttribute("msg", "로그인에 실패했습니다.");
 			return "redirect:/loginForm.do";
 		}
-		
 		
 	}
 	
@@ -135,45 +126,40 @@ public class MemberController {
 	@RequestMapping("/update.do")
 	public String update(Member m, RedirectAttributes rttr, HttpSession session) {
 		
-		m.setMemProfile("");
-		
-		// 문제.
-		// mapper의 update메소드를 통해 해당 회원의 정보를 수정하시오
-		
-		// 조건1. 하나라도 입력안한 데이터가 있으면 updateForm.jsp로 다시돌려보내면서
-		//		 updateForm.jsp에서는 "모든 내용을 입력하세요" 라는 모달창을 띄우세요
-		if (	m.getMemPassword() == null || m.getMemPassword().equals("") ||
+		if(m.getMemID() == null || m.getMemID().equals("") ||
+				m.getMemPassword() == null || m.getMemPassword().equals("") ||
 				m.getMemName() == null || m.getMemName().equals("") ||
 				m.getMemAge() == 0 ||
 				m.getMemEmail() == null || m.getMemEmail().equals("")
 				) {
-				
-				rttr.addFlashAttribute("msgType", "실패메세지");
-				rttr.addFlashAttribute("msg", "모든 내용을 입력하세요.");
-				
-				return "redirect:/updateForm.do";
+			
+			rttr.addFlashAttribute("msgType", "실패메세지");
+			rttr.addFlashAttribute("msg", "모든 내용을 입력하세요.");
+			
+			return "redirect:/updateForm.do";
+			
 		}else {
+			
+			Member mvo = (Member)session.getAttribute("mvo");
+			
+			m.setMemProfile(mvo.getMemProfile());
 			int cnt = mapper.update(m);
-			// 조건3. 회원수정에 성공 했을때에는 index.jsp로 다시 돌려보내면서
-			//		 index.jsp에서는 "회원정보 수정에 성공했습니다" 라는 모달창을 띄우세요
-			if( cnt == 1) {
-				System.out.println("회원정보수정 성공!");
+			
+			if(cnt == 1) {
 				rttr.addFlashAttribute("msgType", "성공메세지");
 				rttr.addFlashAttribute("msg", "회원정보수정에 성공했습니다.");
 				session.setAttribute("mvo", m);
 				return "redirect:/";
 			}else {
-				// 조건2. 회원수정에 실패 했을때에는 updateForm.jsp로 다시 돌려보내면서
-				//		 updateForm.jsp에서는 "회원수정이 실패했습니다" 라는 모달창을 띄우세요
-				System.out.println("회원정보수정 실패...");
 				rttr.addFlashAttribute("msgType", "실패메세지");
 				rttr.addFlashAttribute("msg", "회원정보수정에 실패했습니다.");
+				
 				return "redirect:/updateForm.do";
-		}
+			}
 			
+		}
+		
 	}
-
-}
 	
 	@RequestMapping("/imageForm.do")
 	public String imageForm() {
@@ -183,8 +169,8 @@ public class MemberController {
 	@RequestMapping("/imageUpdate.do")
 	public String imageUpdate(HttpServletRequest request, HttpSession session, RedirectAttributes rttr) {
 		
-		// 파일 업로드를 할 수 있게 도와주는 객체 (cos.jar)
-		// 파일 업로드를 할 수 있게 도와주는 MultipartRequest 객체를 생성하기 위해서는
+		// 파일업로드를 할 수 있게 도와주는 객체 (cos.jar)
+		// 파일업로드를 할 수 있게 도와주는 MultipartRequest 객체를 생성하기 위해서는
 		// 5개의 정보가 필요하다
 		// 요청데이터, 저장경로, 최대크기, 인코딩, 파일명 중복제거
 		MultipartRequest multi = null;
@@ -199,7 +185,6 @@ public class MemberController {
 		
 		// getMember 메소드는 memID와 일치하는 회원의 정보 (Member)를 가져온다
 		String oldImg = mapper.getMember(memID).getMemProfile();
-		System.out.println(oldImg);
 		
 		// 기존의 프로필 사진 삭제
 		File oldFile = new File(savePath+"/"+oldImg);
@@ -221,7 +206,7 @@ public class MemberController {
 			// System.out.println(file.getName());
 			String ext = file.getName().substring(file.getName().lastIndexOf(".") + 1);
 			ext = ext.toUpperCase();
-			System.out.println(ext);
+			
 			if(!(ext.equals("PNG") || ext.equals("GIF") || ext.equals("JPG"))) {
 				
 				if(file.exists()) {
@@ -229,11 +214,9 @@ public class MemberController {
 					rttr.addFlashAttribute("msgType", "실패메세지");
 					rttr.addFlashAttribute("msg", "이미지 파일만 가능합니다.(PNG, JPG, GIF)");
 					return "redirect:/imageForm.do";
-					
 				}
 			}
 		}
-		
 		// 업로드한 파일의 이름을 가져오는 코드
 		String newProfile = multi.getFilesystemName("memProfile");
 		
@@ -245,19 +228,14 @@ public class MemberController {
 		
 		// 사진 업데이트 후 수정된 회원정보를 다시 가져와서 세션에 담기
 		Member m = mapper.getMember(memID);
-		session.setAttribute("mvo", mvo);
+		session.setAttribute("mvo", m);
 		
 		rttr.addFlashAttribute("msgType", "성공메세지");
-		rttr.addFlashAttribute("msg", "이미지 변경에 성공했습니다.");
+		rttr.addFlashAttribute("msg", "이미지 변경이 성공했습니다.");
 		return "redirect:/";
 		
 	}
 	
 	
-	
-	
-	
-	
-	
-	
 }
+

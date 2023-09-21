@@ -7,7 +7,7 @@ import lombok.ToString;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor // 기본생성자
+@NoArgsConstructor
 @ToString
 public class Member {
 	
@@ -22,5 +22,4 @@ public class Member {
 	
 	
 	
-
 }

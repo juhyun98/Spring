@@ -25,7 +25,7 @@ import kr.spring.mapper.BoardMapper;
 @RequestMapping("/board")
 @RestController
 public class BoardRestController {
-	
+
 	// RestController
 	// 비동기 방식의 일만 처리하는 Controller
 	// Rest 전송방식을 처리할 수 있다
@@ -34,10 +34,10 @@ public class BoardRestController {
 	
 	@Autowired
 	private BoardMapper mapper; // MyBatis한테 JDBC 실행하게 요청하는 객체
-
 	
 	@GetMapping("/all")
 	public List<Board> boardList() {
+		System.out.println("게시글 전체보기 기능수행");
 		List<Board> list = mapper.getLists();
 		return list;
 	}
@@ -54,10 +54,9 @@ public class BoardRestController {
 		return vo;
 	}
 	
-	
 	@DeleteMapping("/{idx}")
 	public void boardDelete(@PathVariable("idx") int idx) {
-		System.out.println("게시글 삭제 기능 수행");
+		System.out.println("게시글 삭제 기능수행");
 		mapper.boardDelete(idx);
 	}
 	
@@ -71,5 +70,13 @@ public class BoardRestController {
 		mapper.boardCount(idx);
 	}
 	
-	
 }
+
+
+
+
+
+
+
+
+

@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="table table-bordered"/>
+		<item key="selection" value="글쓰기"/>
 		<list key="findhistory">
+			<item value="글쓰기"/>
+			<item value="build"/>
+			<item value="default"/>
 			<item value="table table-bordered"/>
 			<item value="Type"/>
 			<item value="#"/>
