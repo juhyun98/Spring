@@ -3,6 +3,7 @@
   <module moduleId="org.eclipse.jst.jee.server:SpringMVC01" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:SpringMVC4" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:SpringMVC04" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:SpringMVC5" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:SpringMVC03" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:SpringMVC02" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>
