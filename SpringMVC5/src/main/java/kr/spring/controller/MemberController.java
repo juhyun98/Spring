@@ -181,7 +181,20 @@ public class MemberController {
 			
 			// 권한 삭제
 			mapper.authDelete(m.getMemID());
-			
+			// 권한 입력
+			// 추가 : 권한테이블에 회원의 권한을 저장하기
+			// 추가 : 권한테이블에 회원의 권한을 저장하기
+			List<Auth> list = m.getAuthList();
+			for(Auth auth : list) {
+				if(auth.getAuth() != null) {
+					// 권한 값이 있을때만 권한테이블에 값 넣기
+					Auth saveVO = new Auth();
+					saveVO.setMemID(m.getMemID()); // 회원아이디 넣기
+					saveVO.setAuth(auth.getAuth()); // 권한 넣기
+					// 권한 저장
+					mapper.authInsert(saveVO);
+				}
+			}
 			
 			int cnt = mapper.update(m);
 			
