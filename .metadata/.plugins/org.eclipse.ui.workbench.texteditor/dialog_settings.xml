@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="글쓰기"/>
+		<item key="selection" value="03"/>
 		<list key="findhistory">
+			<item value="03"/>
+			<item value="조회수"/>
 			<item value="글쓰기"/>
 			<item value="build"/>
 			<item value="default"/>
