@@ -81,7 +81,7 @@
 				
 				<!-- 권한 체크박스 -->
 				<tr>
-					<td style="width: 110px; vertical-align: middle;">이메일</td>
+					<td style="width: 110px; vertical-align: middle;">사용자권한</td>
 					<td colspan="2">
 						<input type="checkbox" name="authList[0].auth" value="ROLE_USER"> ROLE_USER
 						<input type="checkbox" name="authList[1].auth" value="ROLE_MANAGER"> ROLE_MANAGER

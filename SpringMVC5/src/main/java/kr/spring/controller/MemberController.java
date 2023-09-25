@@ -132,12 +132,14 @@ public class MemberController {
 	public String login(Member m, HttpSession session, RedirectAttributes rttr) {
 		
 		Member mvo = mapper.login(m);
-		
-		if(mvo != null) {
+		// 추가 비밀번호 일치여부 체크
+		if(mvo != null && pwEncoder.matches(m.getMemPassword(), mvo.getMemPassword())) {
+			
 			rttr.addFlashAttribute("msgType", "성공메세지");
 			rttr.addFlashAttribute("msg", "로그인에 성공했습니다.");
 			session.setAttribute("mvo", mvo);
 			return "redirect:/";
+		
 		}else {
 			rttr.addFlashAttribute("msgType", "실패메세지");
 			rttr.addFlashAttribute("msg", "로그인에 실패했습니다.");
@@ -158,7 +160,8 @@ public class MemberController {
 				m.getMemPassword() == null || m.getMemPassword().equals("") ||
 				m.getMemName() == null || m.getMemName().equals("") ||
 				m.getMemAge() == 0 ||
-				m.getMemEmail() == null || m.getMemEmail().equals("")
+				m.getMemEmail() == null || m.getMemEmail().equals("") ||
+				m.getAuthList().size() == 0
 				) {
 			
 			rttr.addFlashAttribute("msgType", "실패메세지");
@@ -171,6 +174,15 @@ public class MemberController {
 			Member mvo = (Member)session.getAttribute("mvo");
 			
 			m.setMemProfile(mvo.getMemProfile());
+			
+			// 비밀번호 암호화
+			String encyPw = pwEncoder.encode(m.getMemPassword());
+			m.setMemPassword(encyPw);
+			
+			// 권한 삭제
+			mapper.authDelete(m.getMemID());
+			
+			
 			int cnt = mapper.update(m);
 			
 			if(cnt == 1) {
