@@ -7,7 +7,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
+import lombok.Data;
 
+@Data
 public class MemberUser extends User{
 	// Spring Security에 Member객체를 담을 수 있게 해주는 클래스
 	
