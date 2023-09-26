@@ -201,7 +201,8 @@ public class MemberController {
 			if(cnt == 1) {
 				rttr.addFlashAttribute("msgType", "성공메세지");
 				rttr.addFlashAttribute("msg", "회원정보수정에 성공했습니다.");
-				session.setAttribute("mvo", m);
+				Member info = mapper.getMember(m.getMemID());
+				session.setAttribute("mvo", info);
 				return "redirect:/";
 			}else {
 				rttr.addFlashAttribute("msgType", "실패메세지");
