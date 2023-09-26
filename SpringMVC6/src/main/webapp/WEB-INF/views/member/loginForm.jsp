@@ -97,6 +97,14 @@
 	<script type="text/javascript">
 		
 		$(document).ready(function(){
+			// url뒤에 ?error 확인
+			if(${param.error != null}) {
+				$("#messageType").attr("class", "modal-content panel-warning");
+				$(".modal-body").text("아이디와 비밀번호를 확해주세요.");
+				$(".modal-title").text("실패메세지");
+				$("#myMessage").modal("show");
+			}
+			
 			if(${not empty msgType}){
 				if(${msgType eq "실패메세지"}){
 					$("#messageType").attr("class","modal-content panel-warning");
