@@ -34,11 +34,12 @@
 		<form action="${contextPath}/update.do" method="post">
 			
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-			
 			<input type="hidden" name="memPassword" id="memPassword" value="" >
 			<input type="hidden" name="memID" id="memID" value="${mvo.member.memID}">
+			<input type="hidden" name="memProfile" value="${mvo.member.memProfile}">
+			
 			<%-- <input type="hidden" name="memProfile" value="${mvo.memProfile}"> --%>
-		
+			
 			<table style="text-align: center; border : 1px solid #dddddd" class="table table-bordered">
 				<tr>
 					<td style="width: 110px; vertical-align: middle;">아이디</td>

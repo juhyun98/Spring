@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,10 +39,8 @@ public class MemberController {
 	private PasswordEncoder pwEncoder;
 	
 	@Autowired
-	private MemberUserDetailsService MemberUserDetailsService;
+	private MemberUserDetailsService memberUserDetailsService;
 	// 회원정보 수정 후 Spring Security Context 접근하기 위한 객체
-	
-	
 	
 	@GetMapping("/access-denied") // 로그인을 안하고 특정페이지를 요청했을요청하느
 	public String showAccessDenied() {
@@ -188,9 +188,8 @@ public class MemberController {
 			
 		}else {
 			
-			Member mvo = (Member)session.getAttribute("mvo");
-			
-			m.setMemProfile(mvo.getMemProfile());
+			// Member mvo = (Member)session.getAttribute("mvo");
+			// m.setMemProfile(mvo.getMemProfile());
 			
 			// 비밀번호 암호화
 			String encyPw = pwEncoder.encode(m.getMemPassword());
@@ -231,6 +230,11 @@ public class MemberController {
 				Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
 				// 기존 Context 회원정보 가져오기
 				MemberUser userAccount = (MemberUser)authentication.getPrincipal();
+				// Security Context 안에 새로운 (다시 가져온 회원정보) 회원정보 넣기
+				// 수정된 회원정보 다시 가져오기
+				Authentication newAuthentication = createNewAuthentication(authentication, userAccount.getMember().getMemID());
+				
+				SecurityContextHolder.getContext().setAuthentication(authentication);
 				
 				return "redirect:/";
 			}else {
@@ -244,6 +248,20 @@ public class MemberController {
 		
 	}
 	
+	private Authentication createNewAuthentication(Authentication currentAuth, String username) {
+		
+		// 여기에서 새롭게 DB의 회원정보를 가져올 것이다 (로그인)
+		UserDetails newPrincipal = memberUserDetailsService.loadUserByUsername(username);
+		// 비밀번호 관련 보안작업 해야함
+		UsernamePasswordAuthenticationToken newAuth = 
+				new UsernamePasswordAuthenticationToken(newPrincipal, currentAuth.getCredentials(), newPrincipal.getAuthorities());
+		
+		newAuth.setDetails(currentAuth.getDetails());
+		
+		return newAuth;
+	}
+
+
 	@RequestMapping("/imageForm.do")
 	public String imageForm() {
 		return "member/imageForm";
