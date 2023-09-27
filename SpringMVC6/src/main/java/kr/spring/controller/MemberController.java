@@ -282,7 +282,16 @@ public class MemberController {
 		
 		// 기존 해당 프로필 이미지 삭제
 		// - 로그인 한 사람의 프로필 값을 가져와야함
-		String memID = ((Member)session.getAttribute("mvo")).getMemID();
+		// String memID = ((Member)session.getAttribute("mvo")).getMemID();
+		
+		try {
+			multi = new MultipartRequest(request, savePath, fileMaxSize, "UTF-8", new DefaultFileRenamePolicy());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String memID = multi.getParameter("memID");
 		
 		// getMember 메소드는 memID와 일치하는 회원의 정보 (Member)를 가져온다
 		String oldImg = mapper.getMember(memID).getMemProfile();
@@ -291,14 +300,7 @@ public class MemberController {
 		File oldFile = new File(savePath+"/"+oldImg);
 		if(oldFile.exists()) {
 			oldFile.delete();
-		}
-		
-		try {
-			multi = new MultipartRequest(request, savePath, fileMaxSize, "UTF-8", new DefaultFileRenamePolicy());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		}	
 		
 		// 내가 업로드한 파일 가져오기
 		File file = multi.getFile("memProfile");
@@ -328,8 +330,17 @@ public class MemberController {
 		mapper.profileUpdate(mvo);
 		
 		// 사진 업데이트 후 수정된 회원정보를 다시 가져와서 세션에 담기
-		Member m = mapper.getMember(memID);
-		session.setAttribute("mvo", m);
+		// Member m = mapper.getMember(memID);
+		// session.setAttribute("mvo", m);
+		
+		Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
+		// 기존 Context 회원정보 가져오기
+		MemberUser userAccount = (MemberUser)authentication.getPrincipal();
+		// Security Context 안에 새로운 (다시 가져온 회원정보) 회원정보 넣기
+		// 수정된 회원정보 다시 가져오기
+		Authentication newAuthentication = createNewAuthentication(authentication, userAccount.getMember().getMemID());
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		
 		
 		rttr.addFlashAttribute("msgType", "성공메세지");
 		rttr.addFlashAttribute("msg", "이미지 변경이 성공했습니다.");
