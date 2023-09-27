@@ -105,9 +105,9 @@ public class MemberController {
 				rttr.addFlashAttribute("msg", "회원가입에 성공했습니다.");
 				// 회원가입 성공 시 로그인 처리까지 시키기
 				// 회원가입 성공 시 회원정보 + 권한정보까지 가져오기
-				Member mvo = mapper.getMember(m.getMemID());
-				session.setAttribute("mvo", mvo);
-				return "redirect:/";
+				// Member mvo = mapper.getMember(m.getMemID());
+				// session.setAttribute("mvo", mvo);
+				return "redirect:/loginForm.do";
 			}else {
 				System.out.println("회원가입 실패...");
 				rttr.addFlashAttribute("msgType", "실패메세지");
@@ -119,11 +119,12 @@ public class MemberController {
 		
 	}
 	
-	@RequestMapping("/logout.do")
-	public String logout(HttpSession session) {
-		session.invalidate();
-		return "redirect:/";
-	}
+//	@RequestMapping("/logout.do")
+//	public String logout(HttpSession session) {
+//		session.invalidate();
+//		System.out.println("로그아웃실행");
+//		return "redirect:/";
+//	}
 	
 	@RequestMapping("/loginForm.do")
 	public String loginForm() {
@@ -203,8 +204,8 @@ public class MemberController {
 			if(cnt == 1) {
 				rttr.addFlashAttribute("msgType", "성공메세지");
 				rttr.addFlashAttribute("msg", "회원정보수정에 성공했습니다.");
-				Member info = mapper.getMember(m.getMemID());
-				session.setAttribute("mvo", info);
+				// Member info = mapper.getMember(m.getMemID());
+				// session.setAttribute("mvo", info);
 				return "redirect:/";
 			}else {
 				rttr.addFlashAttribute("msgType", "실패메세지");

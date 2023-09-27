@@ -36,7 +36,7 @@ public class MemberUser extends User{
 				.collect(Collectors.toList())
 				/* 최종 콜렉션 리스트로 변경 */
 				);
-		this.member = mvo;
+		this.member = mvo; // 나머지 계정정보를 넣기위해
 	}
 	
 }

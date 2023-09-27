@@ -21,6 +21,7 @@ public class BoardController {
 	private BoardMapper mapper; // MyBatis한테 JDBC 실행하게 요청하는 객체
 
 	
+	
 	@RequestMapping("/boardMain.do") // 요청 url로 들어왔을때 아래 기능을 수행하겠다
 	public String home() {
 		System.out.println("게시판 페이지 이동 기능수행");
