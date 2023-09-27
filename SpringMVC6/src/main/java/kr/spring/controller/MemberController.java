@@ -234,7 +234,7 @@ public class MemberController {
 				// 수정된 회원정보 다시 가져오기
 				Authentication newAuthentication = createNewAuthentication(authentication, userAccount.getMember().getMemID());
 				
-				SecurityContextHolder.getContext().setAuthentication(authentication);
+				SecurityContextHolder.getContext().setAuthentication(newAuthentication);
 				
 				return "redirect:/";
 			}else {
@@ -339,7 +339,7 @@ public class MemberController {
 		// Security Context 안에 새로운 (다시 가져온 회원정보) 회원정보 넣기
 		// 수정된 회원정보 다시 가져오기
 		Authentication newAuthentication = createNewAuthentication(authentication, userAccount.getMember().getMemID());
-		SecurityContextHolder.getContext().setAuthentication(authentication);
+		SecurityContextHolder.getContext().setAuthentication(newAuthentication);
 		
 		
 		rttr.addFlashAttribute("msgType", "성공메세지");
