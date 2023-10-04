@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="mvo"/>
 		<list key="findhistory">
+			<item value="mvo"/>
+			<item value="mvo."/>
 			<item value="05"/>
 			<item value="wel"/>
 			<item value="03"/>
