@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="mvo"/>
+		<item key="selection" value="log4j"/>
 		<list key="findhistory">
+			<item value="log4j"/>
 			<item value="mvo"/>
 			<item value="mvo."/>
 			<item value="05"/>

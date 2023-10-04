@@ -12593,3 +12593,139 @@ java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:34:53.306
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:41:25.032
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:41:25.036
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-10-04 12:41:25.212
+!MESSAGE An internal error occurred during: "Loading descriptor for SpringMVC07.".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl cannot be cast to class org.eclipse.jst.javaee.web.WebApp (org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl and org.eclipse.jst.javaee.web.WebApp are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @1f978bb1)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:41:55.390
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:41:55.390
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-10-04 12:41:55.529
+!MESSAGE An internal error occurred during: "Loading descriptor for SpringMVC07.".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl cannot be cast to class org.eclipse.jst.javaee.web.WebApp (org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl and org.eclipse.jst.javaee.web.WebApp are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @1f978bb1)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-10-04 12:43:04.119
+!MESSAGE An internal error occurred during: "Loading descriptor for SpringMVC07.".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl cannot be cast to class org.eclipse.jst.javaee.web.WebApp (org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl and org.eclipse.jst.javaee.web.WebApp are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @1f978bb1)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:43:04.791
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:43:04.799
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-10-04 12:44:09.679
+!MESSAGE An internal error occurred during: "Loading descriptor for SpringMVC07.".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl cannot be cast to class org.eclipse.jst.javaee.web.WebApp (org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl and org.eclipse.jst.javaee.web.WebApp are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @1f978bb1)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:44:10.277
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:44:10.294
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:45:17.087
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:45:17.087
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-10-04 12:45:17.122
+!MESSAGE An internal error occurred during: "Loading descriptor for SpringMVC07.".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl cannot be cast to class org.eclipse.jst.javaee.web.WebApp (org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl and org.eclipse.jst.javaee.web.WebApp are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @1f978bb1)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:45:40.603
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:45:40.606
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-10-04 12:45:40.796
+!MESSAGE An internal error occurred during: "Loading descriptor for SpringMVC07.".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl cannot be cast to class org.eclipse.jst.javaee.web.WebApp (org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl and org.eclipse.jst.javaee.web.WebApp are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @1f978bb1)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:46:07.418
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:46:07.426
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-10-04 12:46:07.557
+!MESSAGE An internal error occurred during: "Loading descriptor for SpringMVC07.".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl cannot be cast to class org.eclipse.jst.javaee.web.WebApp (org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl and org.eclipse.jst.javaee.web.WebApp are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @1f978bb1)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:46:36.529
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:46:36.529
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:47:09.966
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:47:09.966
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-10-04 12:48:06.286
+!MESSAGE An internal error occurred during: "Loading descriptor for SpringMVC07.".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl cannot be cast to class org.eclipse.jst.javaee.web.WebApp (org.eclipse.jst.j2ee.webapplication.internal.impl.WebAppImpl and org.eclipse.jst.javaee.web.WebApp are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @1f978bb1)
+	at org.eclipse.jst.jee.ui.internal.navigator.Web25ContentProvider.getNewContentProviderInstance(Web25ContentProvider.java:69)
+	at org.eclipse.jst.jee.ui.internal.navigator.LoadingJeeDDJob.run(LoadingJeeDDJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:48:07.066
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-04 12:48:07.077
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-10-04 14:00:24.710
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.qkEAskNR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-10-04 14:00:24.710
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.qkEAskNR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-10-04 14:00:24.716
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-10-04 14:00:24.716
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.qkEAskNR => OK
