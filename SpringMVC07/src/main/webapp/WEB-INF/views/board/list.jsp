@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
@@ -18,7 +19,20 @@
 	<div class="container">
 	  <h2>Spring MVC07</h2>
 	  <div class="panel panel-default">
-	    <div class="panel-heading">Board</div>
+	    <div class="panel-heading">
+	    	<form class="form-inline" action="${cpath}/login/loginProcess" method="post">
+				<div class="form-group">
+					<label for="id">ID:</label>
+					<input type="text" class="form-control" id="id" name="memID">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" id="pwd" name="memPwd">
+				</div>
+				<button type="submit" class="btn btn-default">로그인</button>
+				
+	    	</form>
+	    </div>
 	    <div class="panel-body">
 	    	<table class="table table-bordered table-hover">
 	    		<thead>
@@ -37,34 +51,37 @@
 	    					<td>${i.count}</td>
 	    					<td>${vo.title}</td>
 	    					<td>${vo.writer}</td>
-	    					<td>${vo.indate}</td>
+	    					<td>
+	    						<fmt:formatDate value="${vo.indate}" pattern="yyyy-MM-dd"/>
+	    					</td>
 	    					<td>${vo.count}</td>
 	    				</tr>
 	    			</c:forEach>
 	    		</tbody>
+	    		
+	    		<tr>
+	    			<td colspan="5">
+	    				<button id="regBtn" class="btn btn-xs btn-info pull-right">글쓰기</button>
+	    			</td>
+	    		</tr>
+	    	
 	    	
 	    	</table>
 	    </div>
 	    <div class="panel-footer">스프링게시판 - 박병관</div>
 	  </div>
 	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$("#regBtn").click(function(){
+				location.href="${cpath}/board/register";
+			});
+			
+		});
+	
+	</script>
+	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

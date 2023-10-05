@@ -20,7 +20,12 @@ public class BoardController {
 	// BoardService -> interface
 	// BoardServiceImpl -> BoardService로 업캐스팅 된다
 	
-
+	@RequestMapping("register")
+	public String register() {
+		return "board/register";
+	}
+	
+	
 	@GetMapping("/list")
 	public String boardList(Model model) {
 		List<Board> list = service.getList();
