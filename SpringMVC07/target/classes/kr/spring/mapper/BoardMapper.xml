@@ -26,6 +26,10 @@
 		VALUES(#{idx}, #{memID}, #{title}, #{content}, #{writer}, #{boardGroup}, 0, 0, 1)
 	</insert>
 	
+	<select id="login" parameterType="kr.spring.entity.Member" resultType="kr.spring.entity.Member">
+		SELECT * FROM TBLMEMBER WHERE MEMID = #{memID} AND MEMPWD = #{memPwd}
+	</select>
+	
 	
 
 

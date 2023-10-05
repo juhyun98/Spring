@@ -23,6 +23,16 @@
 	    <div class="panel-body">
 	    	<form action="${cpath}/board/register" method="post">
 	    		
+	    		<!-- 
+	    			문제. post방식의 register요청이 들어왔을때
+	    			BoardController에서는 BoardService의 register 메소드를 통해서
+	    			게시글 입력기능을 수행하고
+	    			list.jsp로 이동시키시오
+	    		 -->
+	    		
+	    		
+	    		<input type="hidden" name="memID" value="${mvo.memID}">
+	    		
 	    		<div class="form-group">
 					<label>제목</label>
 					<input type="text" name="title" class="form-control">
@@ -35,7 +45,7 @@
 	    		
 	    		<div class="form-group">
 					<label>작성자</label>
-					<input type="text" name="writer" class="form-control">
+					<input value="${mvo.memName}" readonly="readonly" type="text" name="writer" class="form-control">
 	    		</div>
 	    		
 	    		<button type="submit" class="btn btn-default btn-sm">등록</button>

@@ -20,19 +20,33 @@
 	  <h2>Spring MVC07</h2>
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
-	    	<form class="form-inline" action="${cpath}/login/loginProcess" method="post">
-				<div class="form-group">
-					<label for="id">ID:</label>
-					<input type="text" class="form-control" id="id" name="memID">
-				</div>
-				<div class="form-group">
-					<label for="pwd">Password:</label>
-					<input type="password" class="form-control" id="pwd" name="memPwd">
-				</div>
-				<button type="submit" class="btn btn-default">로그인</button>
-				
-	    	</form>
-	    </div>
+	    	 <c:if test="${empty mvo }">
+          <form class="form-inline" action="${cpath }/login/loginProcess" method="post">
+             <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" class="from-control" id="id" name="memID">
+             </div>
+             
+             <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="from-control" id="pwd" name="memPwd">
+             </div>
+             <button type="submit" class="btn btn-default">로그인</button>
+          </form>
+          </div>
+       </c:if>   
+       
+        <c:if test="${not empty mvo}">
+        	<form class="form-inline" action="${cpath}/login/logoutProcess" method="post">
+        		<div class="form-group">
+    	    		<label>${mvo.memName}님 방문을 환영합니다.</label>
+        		</div>
+        		<button type="submit" class="btn btn-default">로그아웃</button>
+        	</form>
+        	
+        </c:if>
+
+	    
 	    <div class="panel-body">
 	    	<table class="table table-bordered table-hover">
 	    		<thead>
@@ -59,28 +73,54 @@
 	    			</c:forEach>
 	    		</tbody>
 	    		
+	    		<c:if test="${not empty mvo}">
 	    		<tr>
 	    			<td colspan="5">
 	    				<button id="regBtn" class="btn btn-xs btn-info pull-right">글쓰기</button>
 	    			</td>
 	    		</tr>
-	    	
-	    	
+	    		</c:if>
 	    	</table>
 	    </div>
 	    <div class="panel-footer">스프링게시판 - 박병관</div>
 	  </div>
 	</div>
 	
+	<!-- Modal -->
+	  <div class="modal fade" id="myMessage" role="dialog">
+	    <div class="modal-dialog">
+	      <!-- Modal content-->
+	      <div id="messageType" class="modal-content">
+	        <div class="modal-header panel-heading">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Modal Header</h4>
+	        </div>
+	        <div class="modal-body">
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	
 	<script type="text/javascript">
 		$(document).ready(function(){
+			
+			var result = "${result}";
+			checkModal(result);
 			
 			$("#regBtn").click(function(){
 				location.href="${cpath}/board/register";
 			});
 			
 		});
-	
+		
+		function checkModal(result) {
+			
+		}
+		
+		
 	</script>
 	
 </body>
