@@ -10,13 +10,13 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Member {
-   
-   private String memID;
-   private String memPwd;
-   private String memName;
-   private String memPhone;
-   private String memAddr;
-   private String latitude;
-   private String longitude;
-   
+	
+	private String memID;
+	private String memPwd;
+	private String memName;
+	private String memPhone;
+	private String memAddr;
+	private String latitude;
+	private String longitude;
+	
 }

@@ -12,3 +12,8 @@ public interface BoardMapper {
 	public List<Board> getList();
 	
 }
+
+
+
+
+

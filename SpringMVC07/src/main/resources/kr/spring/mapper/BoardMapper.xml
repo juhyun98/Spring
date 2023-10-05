@@ -3,10 +3,7 @@
 <mapper namespace="kr.spring.mapper.BoardMapper">
 
 	<select id="getList" resultType="kr.spring.entity.Board">
-		SELECT * FROM TBLBOARD
+		SELECT * FROM TBLBOARD 
 		ORDER BY BOARDGROUP DESC
 	</select>
-
-
-
 </mapper>
