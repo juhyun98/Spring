@@ -21,7 +21,28 @@
 	  <div class="panel panel-default">
 	    <div class="panel-heading">Board</div>
 	    <div class="panel-body">
+	    	<table class="table table-bordered table-hover">
+	    		<tr>
+	    			<td>번호</td>
+	    			<td>${vo.idx}</td>
+	    		</tr>
+	    		<tr>
+	    			<td>제목</td>
+	    			<td>${vo.title}</td>
+	    		</tr>
+	    		<tr>
+	    			<td>내용</td>
+	    			<td>
+						<textarea class="form-control" readonly="readonly" rows="10" cols="" >${vo.content}</textarea>
+					</td>
+	    		</tr>
+	    		<tr>
+	    			<td>제목</td>
+	    			<td>${vo.writer}</td>
+	    		</tr>
 	    	
+	    	
+	    	</table>
 	    </div>
 	    <div class="panel-footer">스프링게시판 - 박병관</div>
 	  </div>

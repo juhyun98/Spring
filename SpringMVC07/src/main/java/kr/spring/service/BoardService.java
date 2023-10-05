@@ -10,14 +10,20 @@ public interface BoardService {
 	
 	// 게시글 전체목록 보기 기능
 	public List<Board> getList();
-	
+
 	public Member login(Member vo);
 
 	public void register(Board vo);
-	
-	
-	
-	
-	
-	
+
+	public Board get(int idx);
+
 }
+
+
+
+
+
+
+
+
+

@@ -4,7 +4,6 @@
 <aop-project name="SpringMVC02"/>
 <aop-project name="SpringMVC03"/>
 <aop-project name="SpringMVC04"/>
-<aop-project name="SpringMVC07"/>
 <aop-project name="SpringMVC6"/>
 <aop-project name="SpringMVC5"/>
 </aop-reference-model>

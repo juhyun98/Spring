@@ -30,31 +30,54 @@
 	    			list.jsp로 이동시키시오
 	    		 -->
 	    		
-	    		
-	    		<input type="hidden" name="memID" value="${mvo.memID}">
-	    		
+
+				<input type="hidden" name="memID" value="${mvo.memID}">
+	    	
 	    		<div class="form-group">
-					<label>제목</label>
-					<input type="text" name="title" class="form-control">
+	    			<label>제목</label>
+	    			<input type="text" name="title" class="form-control">
 	    		</div>
 	    		
 	    		<div class="form-group">
-					<label>내용</label>
-					<textarea class="form-control" name="content" rows="10" cols=""></textarea>
+	    			<label>내용</label>
+	    			<textarea class="form-control" name="content" rows="10" cols=""></textarea>
 	    		</div>
-	    		
+	    	
 	    		<div class="form-group">
-					<label>작성자</label>
-					<input value="${mvo.memName}" readonly="readonly" type="text" name="writer" class="form-control">
+	    			<label>작성자</label>
+	    			<input value="${mvo.memName}" readonly="readonly" type="text" name="writer" class="form-control">
 	    		</div>
 	    		
 	    		<button type="submit" class="btn btn-default btn-sm">등록</button>
 	    		<button type="reset" class="btn btn-default btn-sm">취소</button>
-	    		
+	    	
 	    	</form>
 	    </div>
 	    <div class="panel-footer">스프링게시판 - 박병관</div>
 	  </div>
 	</div>
+	
+	<script type="text/javascript">
+	
+	</script>
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
