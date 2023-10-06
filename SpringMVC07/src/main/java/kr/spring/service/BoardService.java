@@ -21,6 +21,8 @@ public interface BoardService {
 
 	public void remove(int idx);
 
+	public void reply(Board vo);
+
 
 }
 

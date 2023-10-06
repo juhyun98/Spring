@@ -44,7 +44,7 @@
 	    		<tr>
 		    		<td colspan="2" style="text-align: center;">
 		    			<c:if test="${not empty mvo}">
-		    				<button class="btn btn-sm btn-primary">답글</button>
+		    				<button onclick="location.href='${cpath}/board/reply?idx=${vo.idx}'" class="btn btn-sm btn-primary">답글</button>
 		    				<button onclick="location.href='${cpath}/board/modify?idx=${vo.idx}'" class="btn btn-sm btn-success">수정</button>
 		    			</c:if>
 		    			<c:if test="${empty mvo}">
@@ -71,19 +71,6 @@
 	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

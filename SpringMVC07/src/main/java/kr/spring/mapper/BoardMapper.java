@@ -23,6 +23,8 @@ public interface BoardMapper {
 	public void update(Board vo);
 
 	public void delete(int idx);
+
+	public void replySeqUpdate(Board parent);
 	
 }
 
