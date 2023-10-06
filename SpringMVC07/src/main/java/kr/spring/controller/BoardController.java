@@ -23,13 +23,34 @@ public class BoardController {
 	// BoardService -> interface
 	// BoardServiceImpl -> BoardService로 업캐스팅 된다
 	
+	@PostMapping("/modify")
+	public String modify(Board vo) {
+		service.modify(vo);
+		return "redirect:/board/list";
+	}
+	
+	
+	@GetMapping("/modify")
+	public String modify(@RequestParam("idx") int idx, Model model) {
+		Board vo = service.get(idx);
+		model.addAttribute("vo", vo);
+		return "board/modify";
+	}
+	
+	
+	@GetMapping("/remove")
+	public String remove(@RequestParam("idx") int idx) {
+		service.remove(idx);
+		return "redirect:/board/list";
+	}
+	
+	
 	@GetMapping("/get")
 	public String get(@RequestParam("idx") int idx, Model model) {
 		Board vo = service.get(idx);
 		model.addAttribute("vo", vo);
 		return "board/get";
 	}
-	
 	
 	
 	@PostMapping("register")
@@ -52,6 +73,9 @@ public class BoardController {
 		model.addAttribute("list", list);
 		return "board/list";
 	}
+	
+	
+	
 	
 }
 
