@@ -26,6 +26,8 @@ public interface BoardMapper {
 
 	public void replySeqUpdate(Board parent);
 	
+	public void replyInsert(Board vo);
+	
 }
 
 

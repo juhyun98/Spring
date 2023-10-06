@@ -66,9 +66,18 @@
 	    				<tr>
 	    					<td>${i.count}</td>
 	    					<td>
+	    					
 	    					<a href="${cpath}/board/get?idx=${vo.idx}">
+	    					<c:if test="${vo.boardLevel > 0}">
+	    						<c:forEach begin="0" end="${vo.boardLevel}" step="1">
+	    							<span style="padding-left: 15px"></span>
+	    						</c:forEach>
+	    						ㄴ[Re]
+	    					</c:if>
 	    					${vo.title}
 	    					</a>
+	    					
+	    					
 	    					</td>
 	    					<td>${vo.writer}</td>
 	    					<td>

@@ -69,7 +69,7 @@ public class BoardServiceImpl implements BoardService{
 		// 현재 넣으려는 답글을 제외한 기존 같은 그룹의 댓글의
 		// 시퀀스 값을 1씩 올려줘야한다
 		mapper.replySeqUpdate(parent);
-		
+		mapper.replyInsert(vo);
 		
 		
 	}
