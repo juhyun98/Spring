@@ -6,8 +6,14 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="log4j"/>
+		<item key="selection" value="수정"/>
 		<list key="findhistory">
+			<item value="수정"/>
+			<item value="t수정"/>
+			<item value="List"/>
+			<item value="삭제"/>
+			<item value="view"/>
+			<item value="board"/>
 			<item value="log4j"/>
 			<item value="mvo"/>
 			<item value="mvo."/>
@@ -17,12 +23,6 @@
 			<item value="조회수"/>
 			<item value="글쓰기"/>
 			<item value="build"/>
-			<item value="default"/>
-			<item value="table table-bordered"/>
-			<item value="Type"/>
-			<item value="#"/>
-			<item value="#&apos;"/>
-			<item value="/Users/EGOVEDU/eGovFrame-3.10.0/"/>
 		</list>
 		<list key="replacehistory">
 		</list>

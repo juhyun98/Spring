@@ -42,7 +42,7 @@
 
 			<!-- 글쓰기 폼 -->
 			<div class="panel-body" id="wform" style="display: none;">
-				<form id="frm">
+				<form id="form">
 					<table class="table">
 						<tr>
 							<td>제목</td>
