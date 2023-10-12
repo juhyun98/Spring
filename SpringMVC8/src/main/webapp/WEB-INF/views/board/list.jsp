@@ -79,7 +79,7 @@
 	    					</c:if>
 	    					
 	    					<c:if test="${vo.boardAvailable > 0}">
-		    					<a href="${cpath}/board/get?idx=${vo.idx}">
+		    					<a class="move" href="${vo.idx}">
 		    					<c:if test="${vo.boardLevel > 0}">
 		    						<c:forEach begin="0" end="${vo.boardLevel}" step="1">
 		    							<span style="padding-left: 15px"></span>
@@ -89,8 +89,6 @@
 		    					<c:out value="${vo.title}" />
 		    					</a>
 	    					</c:if>
-	    					
-	    					
 	    					
 	    					</td>
 	    					<td>${vo.writer}</td>
@@ -141,7 +139,7 @@
 					</c:if>
 				</ul>
 				
-				<form action="${cpath}/board/list" id="pagefrm">
+				<form action="${cpath}/board/list" id="pageFrm">
 					<input type="hidden" id="page" name="page" value="${pageMaker.cri.page}">
 					<input type="hidden" id="perPageNum" name="perPageNum" value="${pageMaker.cri.perPageNum}">
 				</form>
@@ -180,7 +178,23 @@
 			
 			$(".paginate_button a").on("click", function(e){
 				// e -> 현재 클릭한 a태그 요소 자체
-			})
+				e.preventDefault(); // a태그의 href속성 작동 막기
+				var page = $(this).attr("href"); // 클릭한 a태그의 href값 가져오기
+				pageFrm.find("#page").val(page);
+				pageFrm.submit();
+			});
+			
+			// 상세보기 클릭 시 이동
+			$(".move").on("click", function(e){
+				e.preventDefault(); // a태그의 href속성 작동 막기
+				var idx = $(this).attr("href");
+				var tag = "<input type='hidden' name='idx' value='"+idx+"'>";
+				pageFrm.append(tag);
+				pageFrm.attr("action", "${cpath}/board/get");
+				pageFrm.submit();
+			});
+			
+			
 			
 			
 			var result = "${result}";
