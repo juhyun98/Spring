@@ -12,7 +12,7 @@ public class Criteria { // 기준이라는 뜻
 	// Criteria 기본 셋팅 생성자를 통해서 하기
 	public Criteria() {
 		this.page = 1;
-		this.perPageNum = 10;
+		this.perPageNum = 5;
 	}
 	
 	// 현재 페이지의 게시글의 시작번호를 구하는 메소드

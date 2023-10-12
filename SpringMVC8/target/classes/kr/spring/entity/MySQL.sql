@@ -18,121 +18,121 @@ CREATE TABLE TBLBOARD(
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요?', '병관쌤',
+'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요0?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요1?', '병관쌤',
+'pbk', '공지사항입니다2', '11월에 우리 전시회 갈까요1?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요2?', '병관쌤',
+'pbk', '공지사항입니다3', '11월에 우리 전시회 갈까요2?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요3?', '병관쌤',
+'pbk', '공지사항입니다4', '11월에 우리 전시회 갈까요3?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요4?', '병관쌤',
+'pbk', '공지사항입니다5', '11월에 우리 전시회 갈까요4?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요5?', '병관쌤',
+'pbk', '공지사항입니다6', '11월에 우리 전시회 갈까요5?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요6?', '병관쌤',
+'pbk', '공지사항입니다7', '11월에 우리 전시회 갈까요6?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요7?', '병관쌤',
+'pbk', '공지사항입니다8', '11월에 우리 전시회 갈까요7?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요8?', '병관쌤',
+'pbk', '공지사항입니다9', '11월에 우리 전시회 갈까요8?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요9?', '병관쌤',
+'pbk', '공지사항입니다10', '11월에 우리 전시회 갈까요9?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요10?', '병관쌤',
+'pbk', '공지사항입니다11', '11월에 우리 전시회 갈까요10?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요11?', '병관쌤',
+'pbk', '공지사항입니다12', '11월에 우리 전시회 갈까요11?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요12?', '병관쌤',
+'pbk', '공지사항입니다13', '11월에 우리 전시회 갈까요12?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요13?', '병관쌤',
+'pbk', '공지사항입니다14', '11월에 우리 전시회 갈까요13?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요14?', '병관쌤',
+'pbk', '공지사항입니다15', '11월에 우리 전시회 갈까요14?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요15?', '병관쌤',
+'pbk', '공지사항입니다16', '11월에 우리 전시회 갈까요15?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요16?', '병관쌤',
+'pbk', '공지사항입니다17', '11월에 우리 전시회 갈까요16?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요17?', '병관쌤',
+'pbk', '공지사항입니다18', '11월에 우리 전시회 갈까요17?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요18?', '병관쌤',
+'pbk', '공지사항입니다19', '11월에 우리 전시회 갈까요18?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
 INSERT INTO TBLBOARD
 SELECT IFNULL(MAX(IDX + 1), 1),
-'pbk', '공지사항입니다1', '11월에 우리 전시회 갈까요19?', '병관쌤',
+'pbk', '공지사항입니다20', '11월에 우리 전시회 갈까요19?', '병관쌤',
 NOW(), 0, IFNULL(MAX(BOARDGROUP + 1), 1), 0, 0, 1
 FROM TBLBOARD;
 
