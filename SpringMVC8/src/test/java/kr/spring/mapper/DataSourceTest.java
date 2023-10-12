@@ -20,6 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 
 import kr.spring.entity.Board;
+import kr.spring.entity.Criteria;
 import kr.spring.service.BoardServiceImpl;
 import lombok.extern.log4j.Log4j;
 
@@ -85,13 +86,17 @@ public class DataSourceTest {
 	
 	// service 클래스 안에 getList가 잘 되는지 테스트해보시오
 	
-	//	@Test
-//	public void testGetList() {
-//		List<Board> list = mapper.getList();
-//		for(Board vo : list) {
-//			System.out.println(vo.toString());
-//		}
-//	}
+	@Test
+	public void testGetList() {
+		
+		Criteria cri = new Criteria();
+		cri.setPage(2);
+		cri.setPerPageNum(5);
+		List<Board> list = mapper.getList(cri);
+		for(Board vo : list) {
+			System.out.println(vo.toString());
+		}
+	}
 	
 	
 //	@Test
