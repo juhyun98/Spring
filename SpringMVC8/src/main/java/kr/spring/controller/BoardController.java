@@ -34,22 +34,26 @@ public class BoardController {
 	
 	
 	@GetMapping("/reply")
-	public String reply(@RequestParam("idx") int idx, Model model) {
+	public String reply(@RequestParam("idx") int idx, Model model, RedirectAttributes rttr) {
 		Board vo = service.get(idx);
 		model.addAttribute("vo", vo);
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		return "board/reply";
 	}
 	
 	
 	@PostMapping("/modify")
-	public String modify(Board vo) {
+	public String modify(Board vo, Criteria cri, RedirectAttributes rttr) {
 		service.modify(vo);
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		return "redirect:/board/list";
 	}
 	
 	
 	@GetMapping("/modify")
-	public String modify(@RequestParam("idx") int idx, Model model) {
+	public String modify(@RequestParam("idx") int idx, Model model, @ModelAttribute("cri") Criteria cri) {
 		Board vo = service.get(idx);
 		model.addAttribute("vo", vo);
 		return "board/modify";
@@ -57,8 +61,10 @@ public class BoardController {
 	
 	
 	@GetMapping("/remove")
-	public String remove(@RequestParam("idx") int idx) {
+	public String remove(@RequestParam("idx") int idx, Criteria cri, RedirectAttributes rttr) {
 		service.remove(idx);
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		return "redirect:/board/list";
 	}
 	

@@ -22,7 +22,10 @@
        <div class="panel-heading">Board</div>
        <div class="panel-body">
           <form action="${cpath}/board/reply" method="post">
-
+			
+			<input type="hidden" name="page" value="${cri.page}">
+			<input type="hidden" name="perPageNum" value="${cri.perPageNum}">
+			
             <input type="hidden" name="memID" value="${mvo.memID}">
             <!-- 부모글의 게시글 번호 -->
             <input type="hidden" name="idx" value="${vo.idx}"> 
@@ -78,20 +81,5 @@
    
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
