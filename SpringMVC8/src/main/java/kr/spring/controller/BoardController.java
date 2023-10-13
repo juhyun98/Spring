@@ -34,11 +34,10 @@ public class BoardController {
 	
 	
 	@GetMapping("/reply")
-	public String reply(@RequestParam("idx") int idx, Model model, RedirectAttributes rttr) {
+	public String reply(@RequestParam("idx") int idx, Model model, @ModelAttribute("cri") Criteria cri) {
 		Board vo = service.get(idx);
 		model.addAttribute("vo", vo);
-		rttr.addAttribute("page", cri.getPage());
-		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		
 		return "board/reply";
 	}
 	
