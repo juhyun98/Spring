@@ -5,6 +5,10 @@ import lombok.Data;
 @Data
 public class Criteria { // 기준이라는 뜻
 	
+	// 검색기능에 필요한 변수
+	private String type; // 이름, 제목, 내용
+	private String keyword; // 검색내용
+	
 	private int page; // 현재 페이지 번호 저장 변수
 	
 	private int perPageNum; // 한페이지 보여줄 게시글의 개수

@@ -29,7 +29,7 @@ public interface BoardMapper {
 	
 	public void replyInsert(Board vo);
 
-	public int totalCount();
+	public int totalCount(Criteria cri);
 	
 }
 

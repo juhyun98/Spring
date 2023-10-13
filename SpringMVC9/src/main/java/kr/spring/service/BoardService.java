@@ -24,7 +24,7 @@ public interface BoardService {
 
 	public void reply(Board vo);
 
-	public int totalCount();
+	public int totalCount(Criteria cri);
 
 
 }
