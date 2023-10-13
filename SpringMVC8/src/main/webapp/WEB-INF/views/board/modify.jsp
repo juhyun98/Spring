@@ -49,7 +49,7 @@
 		    			
 		    			<c:if test="${not empty mvo && mvo.memID eq vo.memID}">
 			    			<button data-btn="modify" type="button" class="btn btn-sm btn-primary">수정</button>
-		    				<button type="button" data-btn="remove" class="btn btn-sm btn-success">삭제</button>
+		    				<button data-btn="remove" type="button" class="btn btn-sm btn-success">삭제</button>
 		    			</c:if>
 		    			
 		    			<c:if test="${empty mvo or mvo.memID ne vo.memID}">

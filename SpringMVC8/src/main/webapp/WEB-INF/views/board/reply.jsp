@@ -45,11 +45,10 @@
                 <input id="writer" value="${mvo.memName}" readonly="readonly" type="text" name="writer" class="form-control">
              </div>
              
-             <button data-btm="reply" type="submit" class="btn btn-default btn-sm">답변</button>
-             <button type="reset" class="btn btn-default btn-sm">취소</button>
+             <button data-btm="reply" type="button" class="btn btn-default btn-sm">답변</button>
+             <button data-btn="reset" type="button" class="btn btn-default btn-sm">취소</button>
              <button data-btn="list" type="button" class="btn btn-default btn-sm">목록</button>
           
-			 <input id="idx" type="hidden" name="idx" value="${vo.idx}">
 	      </form>
           
        </div>
@@ -74,6 +73,9 @@
 				formData.find("#writer").remove();
 			}else if(btn == "reply"){
 				formData.attr("action", "${cpath}/board/reply");
+			}else if(btn == "reset"){
+				formData[0].reset();
+				return ;
 			}
 			
 			formData.submit();
