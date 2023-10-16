@@ -26,8 +26,11 @@ public class Board { // VO <--- ORM ----> TABLE
 	@Column(updatable = false) // 수정할때 작성자는 안바꿔 주겠다
 	private String writer;
 	
+	@Column(insertable = false, updatable = false, columnDefinition = "datetime default now()")
 	private Date indate;
 	
+	@Column(insertable = false, updatable = false, columnDefinition = "int default 0")
+	private Long count;
 	
 }
 
