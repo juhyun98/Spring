@@ -1,5 +1,7 @@
 package kr.spring.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +22,12 @@ public class Board { // VO <--- ORM ----> TABLE
 	
 	@Column(length = 2000) // 길이지정 -> 길이지정 따로 안할때 길이 255
 	private String content;
+	
+	@Column(updatable = false) // 수정할때 작성자는 안바꿔 주겠다
+	private String writer;
+	
+	private Date indate;
+	
 	
 }
 
