@@ -120,9 +120,35 @@
 				
 			});
 			
-			
+			$("a").on("click", function(e){
+				
+				e.preventDefault();
+				var idx = $(this).attr("href");
+				
+				$.ajax({
+					url : "${cpath}/get",
+					type : "get",
+					data : {"idx" : idx},
+					dataType : "json",
+					success : printBoard,
+					error : function() { alert("error"); }
+				});
+			});
 		});
 	
+		function printBoard(vo){
+			
+			var regForm = $("#regForm");
+			regForm.find("#title").val(vo.title)
+			regForm.find("#content").val(vo.content)
+			regForm.find("#writer").val(vo.writer)
+			
+			regForm.find("input").attr("readonly", true);
+			regForm.find("textarea").attr("readonly", true);
+			
+		}
+		
+		
 	</script>
 
 
