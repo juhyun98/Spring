@@ -20,7 +20,7 @@ public class SecurityConfiguration {
 	}
 	
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 		
 		http.csrf().disable(); // CSRF인증 토큰 비활성화
 		
@@ -34,7 +34,7 @@ public class SecurityConfiguration {
 			.loginPage("/member/login") // 로그인 페이지는 member안에 login에서 하겠다
 			.defaultSuccessUrl("/board/list") // 로그인 성공시 board list로 이동하겠다
 			.and() // 추가
-			.logout()
+			.logout() // Spring Security에서 제공하는 기본 로그아웃을 사용하겠다
 			.logoutUrl("/member/logout") // 로그아웃 실행하고 싶다면 member/logout으로 요청하겠다
 			.logoutSuccessUrl("/"); // 로그아웃하고 /로 이동하겠다
 		
@@ -44,7 +44,14 @@ public class SecurityConfiguration {
 		return http.build();
 	}
 	
-	
-	
-	
+
 }
+
+
+
+
+
+
+
+
+

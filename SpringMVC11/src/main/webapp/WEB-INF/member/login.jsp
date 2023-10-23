@@ -5,8 +5,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:set var="cpath" value="${pageContext.request.contextPath}"/>
-
+<c:set var="cpath" value="${pageContext.request.contextPath}" />  
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +21,6 @@
 
 </head>
 <body>
-
 	<div class="wrapper fadeInDown">
 	  <div id="formContent">
 	    <!-- Tabs Titles -->
@@ -40,11 +39,10 @@
 	
 	    <!-- Remind Passowrd -->
 	    <div id="formFooter">
-     	 <a class="underlineHover" href="#">Forgot Password?</a>
-    	</div>
-
-  </div>
-</div>
-
+	      <a class="underlineHover" href="#">Forgot Password?</a>
+	    </div>
+	
+	  </div>
+	</div>
 </body>
 </html>

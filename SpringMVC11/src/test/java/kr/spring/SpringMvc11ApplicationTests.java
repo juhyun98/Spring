@@ -16,19 +16,25 @@ class SpringMvc11ApplicationTests {
 	private MemberRepository memberRepository;
 	
 	@Autowired
-	private PasswordEncoder passwordEncoder;	
-	
+	private PasswordEncoder passwordEncoder;
+
 	@Test
 	void contextLoads() {
 		// 회원가입테이스
 		Member m = new Member();
-		m.setUsername("admin");
+		m.setUsername("pcw");
 		m.setPassword(passwordEncoder.encode("1234"));
-		m.setName("관리자");
-		m.setRole(Role.ADMIN);
+		m.setName("박치우");
+		m.setRole(Role.MEMBER);
 		m.setEbled(true);
 		memberRepository.save(m);
 		
 	}
 
 }
+
+
+
+
+
+
