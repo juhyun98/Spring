@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
+<!-- Spring Security 관련 태그라이브러리 -->
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
@@ -36,7 +38,9 @@
 				<div class="col-lg-2">
 					<div class="card" style="min-height: 500px; max-height: 1000px;">
 						<div class="card-body">
-							<h4 class="card-title">GUEST</h4>
+							<h4 class="card-title">
+								<sec:authentication property="principal.member.name"/>
+							</h4>
 							<p class="card-text">회원님 Welcome!</p>
 							<form action="">
 								<div class="form-group">
@@ -79,7 +83,7 @@
 				<div class="col-lg-5">
 					<div class="card" style="min-height: 500px; max-height: 1000px;">
 						<div class="card-body">
-							<form action="${cpath}/register" id="regForm" method="post">
+							<form action="${cpath}/board/register" id="regForm" method="post">
 							
 								<input type="hidden" id="idx" name="idx" value="">
 							
@@ -133,10 +137,10 @@
 				} else if (oper == "reset") {
 					regForm[0].reset();
 				} else if (oper == "list") {
-					location.href = "${cpath}/list";
+					location.href = "${cpath}/board/list";
 				} else if (oper == "remove") {
 					var idx = regForm.find("#idx").val();
-					location.href = "${cpath}/remove?idx="+idx;
+					location.href = "${cpath}/board/remove?idx="+idx;
 				} else if (oper == "updateForm") {
 					regForm.find("#title").attr("readonly", false);
 					regForm.find("#content").attr("readonly", false);
@@ -155,7 +159,7 @@
 				
 				
 				$.ajax({
-					url : "${cpath}/get",
+					url : "${cpath}/board/get",
 					type : "get",
 					data : {"idx" : idx},
 					dataType : "json",
@@ -188,12 +192,11 @@
 		
 		function goUpdate() {
 			var regForm = $("#regForm");
-			regForm.attr("action", "${cpath}/modify");
+			regForm.attr("action", "${cpath}/board/modify");
 			regForm.submit();
 		}
 		
 		
-	
 	
 	</script>
 

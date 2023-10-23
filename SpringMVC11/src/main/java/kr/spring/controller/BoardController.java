@@ -33,11 +33,11 @@ public class BoardController {
 	@PostMapping("/register")
 	public String register(Board vo) {
 		boardService.register(vo);
-		return "redirect:/list";
+		return "redirect:/board/list";
 
 	}
 	
-	@GetMapping("/get") // responsebody...머라고.....? 후...
+	@GetMapping("/get")
 	public @ResponseBody Board get(@RequestParam("idx") Long idx) {
 		Board vo = boardService.get(idx);
 		return vo;
@@ -46,14 +46,14 @@ public class BoardController {
 	@GetMapping("/remove")
 	public String remove(@RequestParam("idx") Long idx) {
 		boardService.delete(idx);
-		return "redirect:/list";
+		return "redirect:/board/list";
 	}
 	
 	
 	@PostMapping("/modify")
 	public String modify(Board vo) {
 		boardService.update(vo);
-		return "redirect:/list";
+		return "redirect:/board/list";
 	}
 	
 }
