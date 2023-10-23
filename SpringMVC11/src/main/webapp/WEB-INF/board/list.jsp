@@ -8,6 +8,12 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>
+
+<!-- 로그인한 계정정보 -->
+<c:set var="mvo" value="${SPRING_SECURITY_CONTEXT.authentication.principal}" />
+<!-- 권한정보 -->
+<c:set var="auth" value="${SPRING_SECURITY_CONTEXT.authentication.authorities}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,7 +122,7 @@
 								</div>
 								<div class="form-group">
 									<label for="writer">작성자</label>
-									<input readonly="readonly" value='<sec:authentication property="principal.member.name"/>" type="text" class="form-control" id="writer" name="writer" placeholder="Enter writer">
+									<input readonly="readonly" value="<sec:authentication property='principal.member.name'/>" type="text" class="form-control" id="writer" name="writer" placeholder="Enter writer">
 								</div>
 								<div id="regDiv">
 									<button type="button" data-oper="register" class="btn btn-sm btn-primary">등록</button>
@@ -204,6 +210,16 @@
 			$("#updateDiv").css("display", "block");
 			
 			regForm.find("#idx").val(vo.idx);
+			
+			if("${user.member.name}" == vo.writer) {
+				$("button[data-oper='updateForm']").attr("disabled", false);
+				$("button[data-oper='remove']").attr("disabled", false);
+				
+			}else {
+				$("button[data-oper='updateForm']").attr("disabled", true);
+				$("button[data-oper='remove']").attr("disabled", true);
+			}
+			
 			
 		}
 		
