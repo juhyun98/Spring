@@ -42,16 +42,8 @@
 								<sec:authentication property="principal.member.name"/>
 							</h4>
 							<p class="card-text">회원님 Welcome!</p>
-							<form action="">
-								<div class="form-group">
-									<label for="memID">아이디</label>
-									<input type="text" class="form-control" id="memID" name="memID">
-								</div>
-								<div class="form-group">
-									<label for="memPwd">비밀번호</label>
-									<input type="password" class="form-control" id="memPwd" name="memPwd">
-								</div>
-								<button type="submit" class="form-control btn btn-sm btn-primary">로그인</button>
+							<form action="${cpath}/member/logout">
+								<button type="submit" class="form-control btn btn-sm btn-primary">로그아웃</button>
 							</form>
 						</div>
 					</div>

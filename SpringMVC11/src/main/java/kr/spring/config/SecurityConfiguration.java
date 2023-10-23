@@ -35,7 +35,7 @@ public class SecurityConfiguration {
 			.defaultSuccessUrl("/board/list") // 로그인 성공시 board list로 이동하겠다
 			.and() // 추가
 			.logout()
-			.logoutUrl("./member/logout") // 로그아웃 실행하고 싶다면 member/logout으로 요청하겠다
+			.logoutUrl("/member/logout") // 로그아웃 실행하고 싶다면 member/logout으로 요청하겠다
 			.logoutSuccessUrl("/"); // 로그아웃하고 /로 이동하겠다
 		
 		
