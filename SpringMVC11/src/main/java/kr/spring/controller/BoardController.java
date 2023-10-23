@@ -22,15 +22,11 @@ public class BoardController {
 	private BoardService boardService;
 	
 	@RequestMapping("/list")
-	public String getList(Model model) {
+	public String getList(Model model) { // 게시글 전체조회
 		
 		List<Board> list = boardService.getList();
-//		for(Board vo : list) {
-//			System.out.println(vo.toString());
-//		}
 		model.addAttribute("list", list);
-		
-		return "list";
+		return "board/list";
 	}
 	
 	
