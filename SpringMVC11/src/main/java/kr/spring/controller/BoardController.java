@@ -15,6 +15,7 @@ import kr.spring.entity.Board;
 import kr.spring.service.BoardService;
 
 @Controller
+@RequestMapping("/board/*")
 public class BoardController {
 
 	@Autowired
