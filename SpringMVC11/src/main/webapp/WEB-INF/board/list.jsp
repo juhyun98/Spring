@@ -45,6 +45,32 @@
 							<form action="${cpath}/member/logout">
 								<button type="submit" class="form-control btn btn-sm btn-primary">로그아웃</button>
 							</form>
+							
+							<br>
+							현재 권한 : <sec:authentication property="principal.member.role"/>
+							
+							<!-- 권한에 따른 화면구성 다르게 보여주기 -->
+							<sec:authorize access="hasRole('ADMIN')">
+								<button class="btn btn-info form-control">관리자페이지</button>
+								<br>
+								<br>
+								<button class="btn btn-success form-control">회원목록</button>
+								<br>
+								<br>
+								<button class="btn btn-warning form-control">개인정보수정</button>
+							</sec:authorize>
+							
+							<sec:authorize access="hasRole('MANAGER')">
+								<button class="btn btn-success form-control">회원목록</button>
+								<br>
+								<br>
+								<button class="btn btn-warning form-control">개인정보수정</button>
+							</sec:authorize>
+							
+							<sec:authorize access="hasRole('MEMBER')">
+								<button class="btn btn-warning form-control">개인정보수정</button>
+							</sec:authorize>
+							
 						</div>
 					</div>
 				</div>
@@ -90,7 +116,7 @@
 								</div>
 								<div class="form-group">
 									<label for="writer">작성자</label>
-									<input type="text" class="form-control" id="writer" name="writer" placeholder="Enter writer">
+									<input readonly="readonly" value='<sec:authentication property="principal.member.name"/>" type="text" class="form-control" id="writer" name="writer" placeholder="Enter writer">
 								</div>
 								<div id="regDiv">
 									<button type="button" data-oper="register" class="btn btn-sm btn-primary">등록</button>
