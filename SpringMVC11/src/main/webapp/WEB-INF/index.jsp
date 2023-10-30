@@ -25,7 +25,7 @@
  	<div class="jumbotron jumbotron-fluid">
  		<div class="container">
  			<h1>Spring Boot</h1>
- 			<p>Main  Page</p>
+ 			<p>Main Page</p>
  		</div>
  	</div>
  
