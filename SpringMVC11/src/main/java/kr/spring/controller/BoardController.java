@@ -45,6 +45,10 @@ public class BoardController {
 		boardService.delete(idx);
 		return "redirect:/board/list";
 	}
+	@GetMapping("/main")
+	public String gomain() {
+		return "redirect:/board/main";
+	}
 	
 	@PostMapping("/modify")
 	public String modify(Board vo) {

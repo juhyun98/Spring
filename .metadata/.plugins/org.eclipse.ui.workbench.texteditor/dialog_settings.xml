@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="keyword"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="&quot;a&quot;"/>
+			<item value="login"/>
+			<item value="a hr"/>
+			<item value="a h"/>
 			<item value="keyword"/>
 			<item value="remove"/>
 			<item value="수정"/>
@@ -19,10 +23,6 @@
 			<item value="log4j"/>
 			<item value="mvo"/>
 			<item value="mvo."/>
-			<item value="05"/>
-			<item value="wel"/>
-			<item value="03"/>
-			<item value="조회수"/>
 		</list>
 		<list key="replacehistory">
 		</list>
