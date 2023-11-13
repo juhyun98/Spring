@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="oauth"/>
 		<list key="findhistory">
+			<item value="oauth"/>
+			<item value="oath"/>
 			<item value="&quot;a&quot;"/>
 			<item value="login"/>
 			<item value="a hr"/>
@@ -21,15 +23,13 @@
 			<item value="view"/>
 			<item value="board"/>
 			<item value="log4j"/>
-			<item value="mvo"/>
-			<item value="mvo."/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="824"/>
-		<item key="DIALOG_Y_ORIGIN" value="268"/>
+		<item key="DIALOG_X_ORIGIN" value="1201"/>
+		<item key="DIALOG_Y_ORIGIN" value="641"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
