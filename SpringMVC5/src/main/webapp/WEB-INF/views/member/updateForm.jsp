@@ -130,7 +130,7 @@
 	    <div class="panel-footer">스프링게시판 - 박병관</div>
 	  </div>
 	</div>
-	
+ 
 	
 	 <!-- Modal -->
 	  <div class="modal fade" id="myModal" role="dialog">
